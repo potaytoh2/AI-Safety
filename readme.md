@@ -2,7 +2,7 @@
 1. Create your virtual environment
 `python venv venv`
 
-2. Activate it cuh. Note the code below is for windows, not sure about mac
+2. Activate it cuh. Note the code below is for windows, not sure about mac \n
 `venv/Scripts/Activate.ps1`
 
 3. Install the requirements
