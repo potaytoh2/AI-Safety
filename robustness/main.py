@@ -10,7 +10,7 @@ import os
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str,
-                        default='gpt-3.5-turbo')
+                        default='deepseek-ai/DeepSeek-R1-Distill-Qwen-7B')
     parser.add_argument(
         '--data_path', type=str, default='data/advglue/dev.json')
     parser.add_argument('--task', type=str, default='mnli')
