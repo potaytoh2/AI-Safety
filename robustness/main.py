@@ -68,16 +68,19 @@ def stat(args):
 
 def run(args):
     data = Dataset(args.dataset, DATA_PATH[args.dataset], args.task).dataclass
+    print('made dataset')
     infer = Model(args.task, args.service, LABEL_SET, MODEL_SET, LABEL_TO_ID, args.model, args.gpu)
+    print("made model")
     data_len = len(data.get_data_by_task(args.task))
     os.makedirs("result", exist_ok=True)
-
+    print('made the dataset and inference')
     args.save_file = 'result/' + args.dataset + '_' + args.task + \
         '_' + args.service + '_' + args.model.replace('/', '_') + '.csv'
     lst = []
     for idx in tqdm(range(data_len)):
         res_dict = {}
         content, label = data.get_content_by_idx(idx, args.task)
+        print(content)
         pred_label = infer.predict(
             content, prompt=PROMPT_SET[args.task][-1])
         res_dict['idx'] = idx
