@@ -11,7 +11,7 @@
 #SBATCH --cpus-per-task=4           # Number of CPU to request for the job
 #SBATCH --mem=8GB                   # How much memory does your job require?
 #SBATCH --gres=gpu:1                # Do you require GPUS? If not delete this line
-#SBATCH --time=02:00:00          # How long to run the job for? Jobs exceed this time will be terminated
+#SBATCH --time=10:00:00          # How long to run the job for? Jobs exceed this time will be terminated
                                     # Format <DD-HH:MM:SS> eg. 5 days 05-00:00:00
                                     # Format <DD-HH:MM:SS> eg. 24 hours 1-00:00:00 or 24:00:00
 #SBATCH --mail-type=BEGIN,END,FAIL  # When should you receive an email?
@@ -53,9 +53,9 @@ pip3 install numpy transformers torch tqdm pandas accelerate bitsandbytes
 # Submit your job to the cluster
 srun --gres=gpu:1 bash -c '
 for model in "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"; do
-    for task in "rte"; do
+    for task in "mnli" "qqp" "qnli" "rte"; do
         echo "Running model: $model, task: $task"
-        python main.py --dataset advglue_test --task "$task" --model "$model" --service hug_gen --gpu 0
+        python main.py --dataset advglue --task "$task" --model "$model" --service hug_gen --gpu 0
     done
     # Additional evaluation step
     # python main.py --dataset advglue_test --task "$task" --model "$model" --service hug_gen --gpu 0 --eval

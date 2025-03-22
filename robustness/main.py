@@ -80,7 +80,6 @@ def run(args):
     for idx in tqdm(range(data_len)):
         res_dict = {}
         content, label = data.get_content_by_idx(idx, args.task)
-        print(content)
         pred_label = infer.predict(
             content, prompt=PROMPT_SET[args.task][-1])
         res_dict['idx'] = idx
@@ -91,6 +90,7 @@ def run(args):
 
     pd.DataFrame(lst).to_csv(args.save_file, index=False)
     print(f"✅ CSV file saved successfully: {args.save_file}")
+    print(f"done predicting for: {args.task}")
 
 if __name__ == '__main__':
     args = get_args()

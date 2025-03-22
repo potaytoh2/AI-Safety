@@ -34,12 +34,23 @@ class Model(object):
         return None
     
     def pred_by_generation(self, prompt, model, sentence, label_set):
+        
         def process_label(pred_label, label_set):
             for item in label_set:
                 if item.lower() in pred_label.lower():
                     return item
             return pred_label
         
+        def find_label(output):
+            labels = self.label_set[self.task]
+            labels.sort(key=len,reverse=True)
+            max_len = len(labels[0])+20
+            last_output = output[-max_len:]
+            for i in labels:
+                if i in last_output:
+                    return i
+            return output
+
         out = 'error!'
         input_text = prompt + sentence + ' Answer: '
 
@@ -50,10 +61,12 @@ class Model(object):
             out=out.split(':')[-1].strip()
         
         if 'deepseek' in model.lower():
-            # end_index = out.find('</think>')
-            # string_aft_think = out[end_index+len('</think>'):]
-            # out_processed = string_aft_think.replace('\n','')
-            out_processed = out
+            end_index = out.find('</think>')
+            if end_index == -1:
+                out_processed = find_label(out)
+            else:
+                string_aft_think = out[end_index+len('</think>'):]
+                out_processed = string_aft_think.replace('\n','')
         else:
             out_processed = process_label(out, label_set)
         
