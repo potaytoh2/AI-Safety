@@ -26,7 +26,7 @@ venv/Scripts/Activate.ps1
 3. Install required Python packages:
 
 - For CPU Users:
-Install all packages specified in the 'requirements.txt' file by running:
+    - Install all packages specified in the 'requirements.txt' file by running:
 ```sh
 pip install -r requirements.txt
 ```
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 > The 'requirements.txt' file was created from a Python 3.11 environment
 
 - For GPU Users:
-If you plan to run the project using GPU, skip the previous step and instead install the following:
+    - If you plan to run the project using GPU, skip the previous step and instead install the following:
 ```sh
 pip install transformers
 ```
