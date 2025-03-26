@@ -1,12 +1,57 @@
 {
     "sst2": [
       {
-        "idx": 0,
-        "sentence": "it 's an uneven treat that bores fun at the democratic exercise while also examining its significance for those who take part .",
-        "original_sentence": "it 's an offbeat treat that pokes fun at the democratic exercise while also examining its significance for those who take part .",
-        "label": 1,
-        "data_construction": "word",
-        "method": "SememePSO"
-      }
-    ]
+      "idx": 0,
+      "sentence": "in exactly 89 minutes , most of which passed as slowly as if i 'd been sitting naked on an igloo , formula 51 broke from quirky to jerky to perfect swift .",
+      "original_sentence": "in exactly 89 minutes , most of which passed as slowly as if i 'd been sitting naked on an igloo , formula 51 sank from quirky to jerky to utter turkey .",
+      "label": 0,
+      "data_construction": "word",
+      "method": "SememePSO"
+    }
+   ],
+   "mnli": [
+    {
+      "idx": 0,
+      "premise": "well that would be a help i wish they would do that here we have got so golden landfill space left that we're going to run out before the end of this decade and it's really going to be",
+      "original_premise": "well that would be a help i wish they would do that here we have got so little landfill space left that we're going to run out before the end of this decade and it's really going to be",
+      "hypothesis": "We have plenty of space in the landfill .",
+      "label": 2,
+      "data_construction": "word",
+      "method": "SememePSO"
+    }
+   ],
+   "qqp": [
+    {
+      "idx": 0,
+      "question1": "Can eating precisely advance for dinner lead to weight loss ?",
+      "original_question1": "Can eating only fruit for dinner lead to weight loss ?",
+      "question2": "Does eating dinner earlier in the evening help with weight loss ?",
+      "label": 0,
+      "data_construction": "word",
+      "method": "SememePSO"
+    }
+   ],
+   "qnli": [
+    {
+      "idx": 0,
+      "question": "What other outfit did Apollo 1 test at besides Kennedy Space Center ?",
+      "original_question": "What other location did Apollo 1 test at besides Kennedy Space Center ?",
+      "sentence": "They trained and conducted tests of their spacecraft at North American , and in the altitude chamber at the Kennedy Space Center .",
+      "label": 0,
+      "data_construction": "word",
+      "method": "SememePSO"
+    }
+   ],
+    "rte": [
+    {
+      "idx": 0,
+      "sentence1": "The universal doctrinal courtesy initiation , Doctors Without Borders / Medecins Sans Frontieres ( MSF ) , follows to deal casualties of violence in all seats where it is present in Darfur .",
+      "original_sentence1": "The international humanitarian aid organization , Doctors Without Borders / Medecins Sans Frontieres ( MSF ) , continues to treat victims of violence in all locations where it is present in Darfur .",
+      "sentence2": "Doctors Without Borders is an international aid organization .",
+      "label": 0,
+      "data_construction": "word",
+      "method": "SememePSO"
+    }
+   ]
 }
+

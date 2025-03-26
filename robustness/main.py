@@ -10,7 +10,7 @@ import os
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str,
-                        default='gpt-3.5-turbo')
+                        default='deepseek-ai/DeepSeek-R1-Distill-Qwen-7B')
     parser.add_argument(
         '--data_path', type=str, default='data/advglue/dev.json')
     parser.add_argument('--task', type=str, default='mnli')
@@ -68,10 +68,12 @@ def stat(args):
 
 def run(args):
     data = Dataset(args.dataset, DATA_PATH[args.dataset], args.task).dataclass
+    print('made dataset')
     infer = Model(args.task, args.service, LABEL_SET, MODEL_SET, LABEL_TO_ID, args.model, args.gpu)
+    print("made model")
     data_len = len(data.get_data_by_task(args.task))
     os.makedirs("result", exist_ok=True)
-
+    print('made the dataset and inference')
     args.save_file = 'result/' + args.dataset + '_' + args.task + \
         '_' + args.service + '_' + args.model.replace('/', '_') + '.csv'
     lst = []
@@ -88,6 +90,7 @@ def run(args):
 
     pd.DataFrame(lst).to_csv(args.save_file, index=False)
     print(f"✅ CSV file saved successfully: {args.save_file}")
+    print(f"done predicting for: {args.task}")
 
 if __name__ == '__main__':
     args = get_args()
