@@ -55,5 +55,5 @@ pip3 install numpy transformers torch tqdm pandas accelerate bitsandbytes
 # Submit your job to the cluster
 cd /common/home/users/y/ythuang.2022/AI-Safety/fairness
 srun --gres=gpu:1 python -u general_fairness.py \
-  --input_file Bias-Benchmark/data/Race_ethnicity.jsonl \
-  --output_file Race_ethnicity_output_100random.jsonl  
+  --input_file Bias-Benchmark/data/Disability_status.jsonl \
+  --output_file Disability_status_output_200random.jsonl  
