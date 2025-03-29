@@ -1,5 +1,5 @@
-You are allocated Tesla V100-SXM3-32GB on violin
-You are using GPU 8
+You are allocated NVIDIA GeForce GTX 1080 Ti on bat
+You are using GPU 1
 Requirement already satisfied: pip in ./myenv/lib/python3.9/site-packages (25.0.1)
 Requirement already satisfied: numpy in ./myenv/lib/python3.9/site-packages (2.0.2)
 Requirement already satisfied: transformers in ./myenv/lib/python3.9/site-packages (4.50.1)
@@ -48,7 +48,6 @@ Requirement already satisfied: urllib3<3,>=1.21.1 in ./myenv/lib/python3.9/site-
 Requirement already satisfied: certifi>=2017.4.17 in ./myenv/lib/python3.9/site-packages (from requests->transformers) (2025.1.31)
 Initializing DeepSeek model...
 Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:10<00:10, 10.73s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:18<00:00,  8.76s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:18<00:00,  9.06s/it]
-Some parameters are on the meta device because they were offloaded to the cpu.
-Device set to use cuda:0
-Model initialized successfully
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]slurmstepd: error: Detected 1 oom_kill event in StepId=33236.1. Some of the step tasks have been OOM Killed.
+srun: error: bat: task 0: Out Of Memory
+srun: Terminating StepId=33236.1

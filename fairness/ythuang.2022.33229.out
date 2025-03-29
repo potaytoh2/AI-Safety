@@ -1,15 +1,6 @@
-You are allocated Tesla V100-SXM3-32GB on violin
-You are using GPU 1
-Requirement already satisfied: pip in ./myenv/lib/python3.9/site-packages (23.0.1)
-Collecting pip
-  Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 55.8 MB/s eta 0:00:00
-Installing collected packages: pip
-  Attempting uninstall: pip
-    Found existing installation: pip 23.0.1
-    Uninstalling pip-23.0.1:
-      Successfully uninstalled pip-23.0.1
-Successfully installed pip-25.0.1
+You are allocated NVIDIA GeForce GTX 1080 Ti on bat
+You are using GPU 0
+Requirement already satisfied: pip in ./myenv/lib/python3.9/site-packages (25.0.1)
 Requirement already satisfied: numpy in ./myenv/lib/python3.9/site-packages (2.0.2)
 Requirement already satisfied: transformers in ./myenv/lib/python3.9/site-packages (4.50.1)
 Requirement already satisfied: torch in ./myenv/lib/python3.9/site-packages (2.6.0)
@@ -55,11 +46,8 @@ Requirement already satisfied: charset-normalizer<4,>=2 in ./myenv/lib/python3.9
 Requirement already satisfied: idna<4,>=2.5 in ./myenv/lib/python3.9/site-packages (from requests->transformers) (3.10)
 Requirement already satisfied: urllib3<3,>=1.21.1 in ./myenv/lib/python3.9/site-packages (from requests->transformers) (2.3.0)
 Requirement already satisfied: certifi>=2017.4.17 in ./myenv/lib/python3.9/site-packages (from requests->transformers) (2025.1.31)
-Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
 Initializing DeepSeek model...
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:10<00:10, 10.69s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:18<00:00,  8.75s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:18<00:00,  9.04s/it]
-Some parameters are on the meta device because they were offloaded to the cpu.
-Device set to use cuda:0
-Model initialized successfully
-Processing Race_ethnicity.jsonl (sampled 10):   0%|          | 0/10 [00:00<?, ?it/s]Processing Race_ethnicity.jsonl (sampled 10):  10%|█         | 1/10 [02:21<21:13, 141.45s/it]Processing Race_ethnicity.jsonl (sampled 10):  20%|██        | 2/10 [05:59<24:50, 186.28s/it]Processing Race_ethnicity.jsonl (sampled 10):  30%|███       | 3/10 [09:34<23:15, 199.41s/it]Processing Race_ethnicity.jsonl (sampled 10):  40%|████      | 4/10 [09:47<12:34, 125.77s/it]Processing Race_ethnicity.jsonl (sampled 10):  50%|█████     | 5/10 [13:09<12:46, 153.26s/it]Processing Race_ethnicity.jsonl (sampled 10):  60%|██████    | 6/10 [15:18<09:40, 145.22s/it]Processing Race_ethnicity.jsonl (sampled 10):  70%|███████   | 7/10 [17:14<06:46, 135.63s/it]Processing Race_ethnicity.jsonl (sampled 10):  80%|████████  | 8/10 [20:57<05:27, 163.57s/it]Processing Race_ethnicity.jsonl (sampled 10):  90%|█████████ | 9/10 [24:07<02:51, 171.59s/it]Processing Race_ethnicity.jsonl (sampled 10): 100%|██████████| 10/10 [25:41<00:00, 147.70s/it]Processing Race_ethnicity.jsonl (sampled 10): 100%|██████████| 10/10 [25:41<00:00, 154.14s/it]
-Processing complete. Results saved to Race_ethnicity_output_10random.jsonl
+Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]slurmstepd: error: Detected 1 oom_kill event in StepId=33229.1. Some of the step tasks have been OOM Killed.
+srun: error: bat: task 0: Out Of Memory
+srun: Terminating StepId=33229.1
