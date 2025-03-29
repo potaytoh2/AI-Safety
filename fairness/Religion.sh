@@ -27,7 +27,7 @@
 #SBATCH --account=student   # The account you've been assigned (normally student)
 #SBATCH --qos=studentqos       # What is the QOS assigned to you? Check with myinfo command
 #SBATCH --mail-user=ythuang.2022@scis.smu.edu.sg # Who should receive the email notifications
-#SBATCH --job-name=fairness_deepseek_test_1     # Give the job a name
+#SBATCH --job-name=Religion_test_1     # Give the job a name
 
 #################################################
 ##            END OF SBATCH COMMANDS           ##
@@ -55,5 +55,5 @@ pip3 install numpy transformers torch tqdm pandas accelerate bitsandbytes
 # Submit your job to the cluster
 cd /common/home/users/y/ythuang.2022/AI-Safety/fairness
 srun --gres=gpu:1 python -u general_fairness.py \
-  --input_file Bias-Benchmark/data/SES.jsonl \
-  --output_file SES_output_200random.jsonl  
+  --input_file Bias-Benchmark/data/Religion.jsonl \
+  --output_file Religion_output_200random.jsonl  
