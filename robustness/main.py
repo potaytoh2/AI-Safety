@@ -19,6 +19,7 @@ def get_args():
     parser.add_argument('--service', type=str, default='chat')
     parser.add_argument('--dataset', type=str, default='advglue')
     parser.add_argument('--eval', action='store_true', default=False)
+    parser.add_argument('--mask_rate', type=float, default=0)
     args = parser.parse_args()
     return args
 
@@ -39,7 +40,9 @@ def merge_res(args):
 
 
 def compute_metric(pred_label, true_label, task):
-    return {'num_examples': len(pred_label), 'acc': np.mean(pred_label == true_label) * 100.0, 'asr': 100.0 - np.mean(pred_label == true_label) * 100.0}
+    return {'num_examples': len(pred_label), 
+            'acc': np.mean(pred_label == true_label) * 100.0, 
+            'asr': 100.0 - np.mean(pred_label == true_label) * 100.0}
 
 
 def stat(args):
@@ -55,11 +58,10 @@ def stat(args):
         if key != 'true_label':
             pred_label = []
             for label in labels[key]:
-                pred_label.append(LABEL_TO_ID[args.task][label])
+                pred_label.append(LABEL_TO_ID[args.task].get([label],-1))
             pred_label = np.array(pred_label)
             # acc = np.mean(labels[key] == true_label)
-            metric_dict = compute_metric(
-                pred_label, labels['true_label'], args.task)
+            metric_dict = compute_metric(pred_label, labels['true_label'], args.task)
             
             metric_string = ', '.join(
                 ['{:s}:{:.2f}'.format(k, v) for k, v in metric_dict.items()])
@@ -69,13 +71,18 @@ def stat(args):
 def run(args):
     data = Dataset(args.dataset, DATA_PATH[args.dataset], args.task).dataclass
     print('made dataset')
-    infer = Model(args.task, args.service, LABEL_SET, MODEL_SET, LABEL_TO_ID, args.model, args.gpu)
+    infer = Model(args.task, args.service, LABEL_SET, MODEL_SET, LABEL_TO_ID, args.model, args.gpu, mask_rate=args.mask_rate)
     print("made model")
     data_len = len(data.get_data_by_task(args.task))
     os.makedirs("result", exist_ok=True)
     print('made the dataset and inference')
     args.save_file = 'result/' + args.dataset + '_' + args.task + \
-        '_' + args.service + '_' + args.model.replace('/', '_') + '.csv'
+        '_' + args.service + '_' + args.model.replace('/', '_')
+    
+    if args.mask_rate > 0:
+        args.save_file += f'_maskrate_{args.mask_rate}'
+
+    args.save_file += '.csv'
     lst = []
     for idx in tqdm(range(data_len)):
         res_dict = {}

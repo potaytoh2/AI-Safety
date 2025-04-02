@@ -19,19 +19,19 @@ MODEL_SET = {
 
 PROMPT_SET = {
     'sst2': [
-        'Is the following sentence positive or negative? Answer me with "positive" or "negative", just one word. ',
+        'Is the following sentence positive or negative? Only answer me with "positive" or "negative", just one word. ',
     ],
     'qqp': [
-        'Are the following two questions equivalent or not? Answer me with "equivalent" or "not_equivalent". ',
+        'Are the following two questions equivalent or not? Only answer me with "equivalent" or "not_equivalent", just one word. ',
     ],
     'mnli': [
-        'Are the following two sentences entailment, neutral or contradiction? Answer me with "entailment", "neutral" or "contradiction". ',
+        'Are the following two sentences entailment, neutral or contradiction? Only answer me with "entailment", "neutral" or "contradiction", just one word. ',
     ],
     'qnli': [
-        'Are the following question and sentence entailment or not_entailment? Answer me with "entailment" or "not_entailment". ',
+        'Are the following question and sentence entailment or not_entailment? Only answer me with "entailment" or "not_entailment", just one word. ',
     ],
     'rte': [
-        'Are the following two sentences entailment or not_entailment? Answer me with "entailment" or "not_entailment". ',
+        'Are the following two sentences entailment or not_entailment? Only answer me with "entailment" or "not_entailment", just one word. ',
     ],
 }
 
