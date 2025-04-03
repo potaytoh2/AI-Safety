@@ -3,7 +3,7 @@ import pandas as pd
 import re
 
 # Load JSONL file
-jsonl_path = "/mnt/data/Race_ethnicity_output_200random.jsonl"
+jsonl_path = "/common/home/users/y/ythuang.2022/AI-Safety/fairness/output/Sexual_orientation_output.jsonl"
 records = []
 
 with open(jsonl_path, 'r') as f:
@@ -42,7 +42,7 @@ with open(jsonl_path, 'r') as f:
 
 # Convert to DataFrame and export to Excel
 df = pd.DataFrame(records)
-output_excel_path = "/mnt/data/Race_ethnicity_output_with_predictions.xlsx"
+output_excel_path = "/common/home/users/y/ythuang.2022/AI-Safety/fairness/Sexual_orientation_with_predictions.xlsx"
 df.to_excel(output_excel_path, index=False)
 
 output_excel_path
