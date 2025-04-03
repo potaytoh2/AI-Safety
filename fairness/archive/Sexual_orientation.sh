@@ -9,7 +9,7 @@
 
 #SBATCH --nodes=1                   # How many nodes required? Usually 1
 #SBATCH --cpus-per-task=4           # Number of CPU to request for the job
-#SBATCH --mem=24GB                   # How much memory does your job require?
+#SBATCH --mem=16GB                   # How much memory does your job require?
 #SBATCH --gres=gpu:1                # Do you require GPUS? If not delete this line
 #SBATCH --time=1-00:00:00          # How long to run the job for? Jobs exceed this time will be terminated
                                     # Format <DD-HH:MM:SS> eg. 5 days 05-00:00:00
@@ -27,7 +27,7 @@
 #SBATCH --account=student   # The account you've been assigned (normally student)
 #SBATCH --qos=studentqos       # What is the QOS assigned to you? Check with myinfo command
 #SBATCH --mail-user=ythuang.2022@scis.smu.edu.sg # Who should receive the email notifications
-#SBATCH --job-name=fairness_deepseek_test_1     # Give the job a name
+#SBATCH --job-name=Sexual_orientation_test_1     # Give the job a name
 
 #################################################
 ##            END OF SBATCH COMMANDS           ##
@@ -55,5 +55,5 @@ pip3 install numpy transformers torch tqdm pandas accelerate bitsandbytes
 # Submit your job to the cluster
 cd /common/home/users/y/ythuang.2022/AI-Safety/fairness
 srun --gres=gpu:1 python -u general_fairness.py \
-  --input_file Bias-Benchmark/data/SES.jsonl \
-  --output_file SES_output_200random.jsonl  
+  --input_file Bias-Benchmark/data/Sexual_orientation.jsonl \
+  --output_file Sexual_orientation_output_200random.jsonl  

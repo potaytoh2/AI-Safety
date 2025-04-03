@@ -29,7 +29,7 @@ def jsonl_to_excel(jsonl_path, output_excel_path):
     # Convert to DataFrame
     df = pd.DataFrame(records)
     df.to_excel(output_excel_path, index=False)
-    print(f"✅ Exported to {output_excel_path}")
+    print(f"Exported to {output_excel_path}")
 
 # Example usage:
 jsonl_to_excel("Disability_status_output_200random.jsonl", "Disability_status_output_200random.xlsx")
