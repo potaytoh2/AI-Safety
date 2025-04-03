@@ -76,31 +76,44 @@ Answer: """
         # Process all examples with strategically selected few-shot examples
         results = []
         for example in tqdm(data, desc="Processing with few-shot examples"):
-            # Select few-shot examples based on the current example
-            few_shot_examples = self._select_few_shot_examples(example, group_pools, challenging_examples)
-            
-            # Extract data needed for prediction
-            context = example.get("context", "")
-            question = example.get("question", "")
-            options = [example.get(f"ans{i}", "") for i in range(3)]
-            
-            # Make prediction with few-shot examples
-            prediction = self.model.predict(context, question, options, 
-                                           prompt_template=self.base_prompt,
-                                           few_shot_examples=few_shot_examples)
-            
-            # Add prediction and few-shot examples to the result
-            result = {**example}
-            result["model_output"] = {
-                "prediction": prediction["prediction"],
-                "raw_output": prediction["raw_output"],
-                "prompt_used": prediction["input_text"]
-            }
-            result["fairness_enhancement"] = {
-                "method": "few_shot_selection",
-                "few_shot_examples": [ex["example_id"] for ex in few_shot_examples]
-            }
-            results.append(result)
+            try:
+                # Select few-shot examples based on the current example
+                few_shot_examples = self._select_few_shot_examples(example, group_pools, challenging_examples)
+                
+                # Extract data needed for prediction
+                context = example.get("context", "")
+                question = example.get("question", "")
+                options = [example.get(f"ans{i}", "") for i in range(3)]
+                
+                # Make prediction with few-shot examples
+                prediction = self.model.predict(context, question, options, 
+                                               prompt_template=self.base_prompt,
+                                               few_shot_examples=few_shot_examples)
+                
+                # Add prediction and few-shot examples to the result
+                result = {**example}
+                result["model_output"] = {
+                    "prediction": prediction.get("prediction", ""),
+                    "prompt_used": prediction.get("input_text", "")
+                }
+                
+                # Only add raw_output if it exists
+                if isinstance(prediction, dict) and "raw_output" in prediction:
+                    result["model_output"]["raw_output"] = prediction["raw_output"]
+                
+                result["fairness_enhancement"] = {
+                    "method": "few_shot_selection",
+                    "few_shot_examples": [ex["example_id"] for ex in few_shot_examples]
+                }
+                results.append(result)
+            except Exception as e:
+                logger.error(f"Error processing example: {str(e)}")
+                # Add a minimal result to maintain consistency
+                results.append({
+                    **example,
+                    "model_output": {"error": str(e)},
+                    "fairness_enhancement": {"method": "few_shot_selection", "error": True}
+                })
         
         return results
     
@@ -188,20 +201,23 @@ Answer: """
         # Evaluate model on sampled examples
         challenging = []
         for example in tqdm(sampled_examples, desc="Identifying challenging examples"):
-            context = example.get("context", "")
-            question = example.get("question", "")
-            options = [example.get(f"ans{i}", "") for i in range(3)]
-            
-            # Make prediction using default prompt
-            prediction = self.model.predict(context, question, options)
-            
-            # Extract the predicted answer and check if it matches "unknown"
-            predicted = prediction["prediction"]
-            
-            # If the model predicts a specific answer for an ambiguous context,
-            # it might be relying on stereotypes or biases
-            if "unknown" not in predicted.lower():
-                challenging.append(example)
+            try:
+                context = example.get("context", "")
+                question = example.get("question", "")
+                options = [example.get(f"ans{i}", "") for i in range(3)]
+                
+                # Make prediction using default prompt
+                prediction = self.model.predict(context, question, options)
+                
+                # Extract the predicted answer and check if it matches "unknown"
+                predicted = prediction.get("prediction", "")
+                
+                # If the model predicts a specific answer for an ambiguous context,
+                # it might be relying on stereotypes or biases
+                if "unknown" not in predicted.lower():
+                    challenging.append(example)
+            except Exception as e:
+                logger.error(f"Error evaluating challenging example: {str(e)}")
         
         return challenging
     

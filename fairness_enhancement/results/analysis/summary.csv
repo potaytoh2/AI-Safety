@@ -1,5 +1,0 @@
-Method,Unknown for Ambiguous (%),Bias for Ambiguous (%),Accuracy
-prompt_optimization,0.0,100.0,20.0
-few_shot,0.0,100.0,40.0
-post_processing,0.0,100.0,20.0
-ensemble,0.0,100.0,40.0

@@ -81,6 +81,31 @@ Remember to focus only on the given facts and treat all individuals with equal c
 What is the most likely answer based solely on the information provided?
 Answer: """
         ]
+
+
+    def _prepare_full_prompt(self, example, prompt):
+        """
+        Prepare the full prompt by combining the base prompt with the example context and question.
+        
+        Args:
+            example: The example data containing context and question
+            prompt: The base prompt to use
+            
+        Returns:
+            The complete prompt ready for the model
+        """
+        # Basic format for BBQ dataset structure
+        context = example["context"]
+        question = example["question"]
+        options = [example.get(f"ans{i}", "") for i in range(3)]
+        
+        # Format the options as a list
+        formatted_options = "\n".join([f"- {option}" for option in options])
+        
+        # Combine everything into a full prompt
+        full_prompt = f"{prompt}\n\nContext: {context}\n\nQuestion: {question}\n\nPossible Answers:\n{formatted_options}\n\nProvide the most likely answer:\nAnswer: "
+        
+        return full_prompt
     
     def enhance(self, data: List[Dict]) -> List[Dict]:
         """Apply fair prompt optimization to enhance fairness.
@@ -147,22 +172,35 @@ Answer: """
         results = []
         
         for example in tqdm(data, desc="Baseline evaluation"):
-            # Extract data needed for prediction
-            context = example.get("context", "")
-            question = example.get("question", "")
-            options = [example.get(f"ans{i}", "") for i in range(3)]
-            
-            # Make prediction using default prompt
-            prediction = self.model.predict(context, question, options)
-            
-            # Add prediction to the example
-            result = {**example}
-            result["model_output"] = {
-                "original_prediction": prediction["prediction"],
-                "prediction": prediction["prediction"],
-                "prompt_used": prediction["prompt_used"]
-            }
-            results.append(result)
+            try:
+                # Extract data needed for prediction
+                context = example.get("context", "")
+                question = example.get("question", "")
+                options = [example.get(f"ans{i}", "") for i in range(3)]
+                
+                # Make prediction using default prompt
+                prediction = self.model.predict(context, question, options)
+                
+                # Add prediction to the example
+                result = {**example}
+                result["model_output"] = {
+                    "original_prediction": prediction.get("prediction", ""),
+                    "prediction": prediction.get("prediction", ""),
+                    "prompt_used": prediction.get("prompt_used", "")
+                }
+                
+                # Only add raw_output if it exists
+                if isinstance(prediction, dict) and "raw_output" in prediction:
+                    result["model_output"]["raw_output"] = prediction["raw_output"]
+                    
+                results.append(result)
+            except Exception as e:
+                logger.error(f"Error in baseline evaluation: {str(e)}")
+                # Add minimal result with error info
+                results.append({
+                    **example,
+                    "model_output": {"error": str(e)}
+                })
         
         return results
     
@@ -302,34 +340,58 @@ Answer: """
         return target_groups
     
     def _evaluate_with_prompt(self, data: List[Dict], prompt: str) -> List[Dict]:
-        """Evaluate model with a specific prompt.
-        
-        Args:
-            data: List of examples
-            prompt: Prompt template to use
-            
-        Returns:
-            List of results with predictions
-        """
+        """Evaluate model with a specific prompt."""
         results = []
         
         for example in tqdm(data, desc="Prompt evaluation"):
-            # Extract data needed for prediction
-            context = example.get("context", "")
-            question = example.get("question", "")
-            options = [example.get(f"ans{i}", "") for i in range(3)]
-            
-            # Make prediction using the provided prompt
-            prediction = self.model.predict(context, question, options, prompt_template=prompt)
-            
-            # Add prediction to the example
-            result = {**example}
-            result["model_output"] = {
-                "prediction": prediction["prediction"],
-                "raw_output": prediction["raw_output"],
-                "prompt_used": prediction["input_text"]
-            }
-            results.append(result)
+            try:
+                # Extract data needed for prediction
+                context = example.get("context", "")
+                question = example.get("question", "")
+                options = [example.get(f"ans{i}", "") for i in range(3)]
+                
+                # Prepare the full prompt
+                full_prompt = self._prepare_full_prompt(example, prompt)
+                
+                # Make prediction using the provided prompt
+                prediction = self.model.predict(context, question, options, prompt_template=prompt)
+                
+                # Check if prediction is None (this is the key fix)
+                if prediction is None:
+                    logger.error(f"Model returned None for example: {example.get('example_id', 'unknown')}")
+                    prediction = {
+                        "prediction": "prediction_failed",
+                        "input_text": full_prompt,
+                        "error": "Model returned None"
+                    }
+                
+                # Add prediction to the example
+                result = {**example}
+                result["model_output"] = {
+                    "prediction": prediction.get("prediction", ""),
+                    "prompt_used": prediction.get("input_text", full_prompt)
+                }
+                
+                # Only add raw_output if it exists
+                if isinstance(prediction, dict) and "raw_output" in prediction:
+                    result["model_output"]["raw_output"] = prediction["raw_output"]
+                    
+                results.append(result)
+            except Exception as e:
+                logger.error(f"Error in prompt evaluation: {str(e)}")
+                # Add a minimal result with error information
+                results.append({
+                    **example,
+                    "model_output": {
+                        "prediction": "error",
+                        "prompt_used": full_prompt if 'full_prompt' in locals() else "",
+                        "error": str(e)
+                    },
+                    "fairness_enhancement": {
+                        "method": "prompt_optimization",
+                        "error": True
+                    }
+                })
         
         return results
     

@@ -1,0 +1,5 @@
+Method,Unknown for Ambiguous (%),Bias for Ambiguous (%),Accuracy (%),TPR Disparity,FPR Disparity,Accuracy Disparity (%)
+prompt_optimization,62.5,37.5,80.0,0.0,0.0,100.0
+few_shot,62.5,37.5,50.0,0.0,0.0,100.0
+post_processing,50.0,50.0,50.0,0.0,1.0,100.0
+ensemble,50.0,50.0,50.0,0.0,1.0,100.0

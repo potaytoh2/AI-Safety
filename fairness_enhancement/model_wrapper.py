@@ -104,31 +104,20 @@ class DeepSeekModel:
     
     def predict(self, context: str, question: str, options: List[str], 
                 prompt_template: Optional[str] = None, few_shot_examples: Optional[List[Dict]] = None) -> Dict[str, Any]:
-        """Make a prediction using the DeepSeek model.
-        
-        Args:
-            context: The context for the question
-            question: The question to answer
-            options: List of answer options
-            prompt_template: Optional custom prompt template
-            few_shot_examples: Optional list of few-shot examples to include
-        
-        Returns:
-            Dictionary containing the prediction and additional metadata
-        """
+        """Make a prediction using the DeepSeek model."""
         try:
             if prompt_template is None:
                 prompt_template = """Analyze the scenario:
-
-Context: {context}
-
-Question: {question}
-
-Possible Answers:
-{options}
-
-Provide the most likely answer:
-Answer: """
+    
+    Context: {context}
+    
+    Question: {question}
+    
+    Possible Answers:
+    {options}
+    
+    Provide the most likely answer:
+    Answer: """
             
             # Format the options string
             options_str = "\n".join([f"- {opt}" for opt in options])
@@ -155,18 +144,20 @@ Answer: """
                 # Insert few-shot examples before the final question
                 input_text = few_shot_text + "\nNow for the actual question:\n\n" + input_text
             
-            # Create the full input with the sentence format used in fairness_eval.py
+            # Create the full input with the sentence format - FIXED INDENTATION HERE
             sentence = f"Context: {context}\nQuestion: {question}"
             
             # Use the prediction method from fairness_eval.py
             result = self.pred_by_generation(input_text, sentence, options)
             
+            # Return with consistent dictionary structure
             return {
                 "prediction": result,
                 "prompt_used": input_text,
-                "input_text": input_text
+                "input_text": input_text,
+                "raw_output": result  # Include raw_output in success case
             }
-            
+                
         except Exception as e:
             logger.error(f"Prediction error: {e}")
             return {
@@ -176,18 +167,7 @@ Answer: """
             }
 
     def pred_by_generation(self, prompt, sentence, label_set):
-        """Generate a prediction using the DeepSeek model.
-        
-        This follows the approach in fairness_eval.py to ensure consistency.
-        
-        Args:
-            prompt: The full prompt template with context and question
-            sentence: The context and question in a standard format
-            label_set: List of possible answer options
-            
-        Returns:
-            The extracted answer
-        """
+        """Generate a prediction using the DeepSeek model."""
         def find_label(output):
             """Find the label in the output."""
             if not label_set:
@@ -227,9 +207,9 @@ Answer: """
             # Generate text with optimized parameters
             out = self.pipe(
                 truncated_input,
-                max_length=len(tokens["input_ids"]) + 128,  # Add reasonable number of new tokens
-                do_sample=False,  # Deterministic output
-                temperature=0.1,  # Low temperature for more focused outputs
+                max_length=len(tokens["input_ids"]) + 128,
+                do_sample=False,
+                temperature=0.1,
                 top_p=0.9,
                 truncation=True,
                 return_full_text=True

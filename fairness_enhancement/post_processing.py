@@ -75,29 +75,42 @@ class BiasCorrector:
         # Apply bias correction to evaluation data
         corrected_results = []
         for example in tqdm(data, desc="Applying bias correction"):
-            # Get baseline prediction first
-            context = example.get("context", "")
-            question = example.get("question", "")
-            options = [example.get(f"ans{i}", "") for i in range(3)]
-            
-            prediction = self.model.predict(context, question, options)
-            
-            # Apply post-processing corrections
-            corrected_prediction = self._apply_corrections(example, prediction)
-            
-            # Add predictions to the example
-            result = {**example}
-            result["model_output"] = {
-                "original_prediction": prediction["prediction"],
-                "prediction": corrected_prediction["prediction"],
-                "raw_output": prediction["raw_output"],
-                "prompt_used": prediction["input_text"]
-            }
-            result["fairness_enhancement"] = {
-                "method": "post_processing",
-                "correction_method": corrected_prediction["method"]
-            }
-            corrected_results.append(result)
+            try:
+                # Get baseline prediction first
+                context = example.get("context", "")
+                question = example.get("question", "")
+                options = [example.get(f"ans{i}", "") for i in range(3)]
+                
+                prediction = self.model.predict(context, question, options)
+                
+                # Apply post-processing corrections
+                corrected_prediction = self._apply_corrections(example, prediction)
+                
+                # Add predictions to the example
+                result = {**example}
+                result["model_output"] = {
+                    "original_prediction": prediction.get("prediction", ""),
+                    "prediction": corrected_prediction.get("prediction", ""),
+                    "prompt_used": prediction.get("input_text", "")
+                }
+                
+                # Only add raw_output if it exists
+                if "raw_output" in prediction:
+                    result["model_output"]["raw_output"] = prediction["raw_output"]
+                
+                result["fairness_enhancement"] = {
+                    "method": "post_processing",
+                    "correction_method": corrected_prediction.get("method", "unknown")
+                }
+                corrected_results.append(result)
+            except Exception as e:
+                logger.error(f"Error processing example: {str(e)}")
+                # Add a minimal result to maintain consistency
+                corrected_results.append({
+                    **example,
+                    "model_output": {"error": str(e)},
+                    "fairness_enhancement": {"method": "post_processing", "error": True}
+                })
         
         return corrected_results
     
@@ -114,22 +127,34 @@ class BiasCorrector:
         results = []
         
         for example in tqdm(data, desc="Baseline prediction"):
-            # Extract data needed for prediction
-            context = example.get("context", "")
-            question = example.get("question", "")
-            options = [example.get(f"ans{i}", "") for i in range(3)]
-            
-            # Make prediction using default prompt
-            prediction = self.model.predict(context, question, options)
-            
-            # Add prediction to the example
-            result = {**example}
-            result["model_output"] = {
-                "prediction": prediction["prediction"],
-                "raw_output": prediction["raw_output"],
-                "prompt_used": prediction["input_text"]
-            }
-            results.append(result)
+            try:
+                # Extract data needed for prediction
+                context = example.get("context", "")
+                question = example.get("question", "")
+                options = [example.get(f"ans{i}", "") for i in range(3)]
+                
+                # Make prediction using default prompt
+                prediction = self.model.predict(context, question, options)
+                
+                # Add prediction to the example
+                result = {**example}
+                result["model_output"] = {
+                    "prediction": prediction.get("prediction", ""),
+                    "prompt_used": prediction.get("input_text", "")
+                }
+                
+                # Only add raw_output if it exists
+                if "raw_output" in prediction:
+                    result["model_output"]["raw_output"] = prediction["raw_output"]
+                
+                results.append(result)
+            except Exception as e:
+                logger.error(f"Error in baseline prediction: {str(e)}")
+                # Add minimal result with error info
+                results.append({
+                    **example,
+                    "model_output": {"error": str(e)}
+                })
         
         return results
     
@@ -287,7 +312,7 @@ class BiasCorrector:
             return demographic_correction
         else:
             # For disambiguated examples, prefer logistic correction for better accuracy
-            return logistic_correction if logistic_correction["confidence"] > 0.6 else demographic_correction
+            return logistic_correction if logistic_correction.get("confidence", 0) > 0.6 else demographic_correction
     
     def _apply_demographic_parity_correction(self, example: Dict, prediction: Dict) -> Dict:
         """Apply demographic parity correction.
@@ -299,7 +324,7 @@ class BiasCorrector:
         Returns:
             Corrected prediction
         """
-        pred_text = prediction["prediction"]
+        pred_text = prediction.get("prediction", "")
         
         # Get all answer options and their groups
         options = []
@@ -365,7 +390,7 @@ class BiasCorrector:
         # If no trained model is available, return original prediction
         if not self.trained_model:
             return {
-                "prediction": prediction["prediction"],
+                "prediction": prediction.get("prediction", ""),
                 "method": "original",
                 "confidence": 0.5
             }
@@ -376,7 +401,7 @@ class BiasCorrector:
         question_polarity = example.get("question_polarity", "unknown")
         
         # Get predicted index
-        pred_text = prediction["prediction"]
+        pred_text = prediction.get("prediction", "")
         pred_idx = -1
         for i in range(3):
             ans_key = f"ans{i}"

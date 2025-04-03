@@ -1,0 +1,5 @@
+Method,Score,Rank
+prompt_optimization,27.474999999999998,1
+few_shot,18.866666666666664,2
+ensemble,7.666666666666667,3
+post_processing,7.15,4
