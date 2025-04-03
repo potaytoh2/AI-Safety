@@ -31,7 +31,7 @@ venv/Scripts/Activate.ps1
 pip install -r requirements.txt
 ```
 > [!NOTE]
-> The 'requirements.txt' file was created from a Python 3.11 environment
+> The `requirements.txt` file was created from a Python 3.11 environment
 
 - For GPU Users:
     - If you plan to run the project using GPU, skip the previous step and instead install the following:
