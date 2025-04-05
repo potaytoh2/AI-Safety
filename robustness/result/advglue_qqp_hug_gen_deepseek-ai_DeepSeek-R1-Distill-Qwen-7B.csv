@@ -1,79 +1,79 @@
 idx,content,true_label,pred_label
-0,Can eating precisely advance for dinner lead to weight loss ? Does eating dinner earlier in the evening help with weight loss ?,0,"The first question focuses on the exact timing of eating dinner to achieve weight loss, while the second questions the timing of eating dinner earlier in the evening. They differ in their emphasis on specific timing and possibly different meal schedules.equivalentThe first question is about the exact timing of a specific meal, while the second is about eating earlier in the evening, which may imply a different schedule or meal frequency.not_equivalent"
-1,How can I create the most flourishing question on Quora ? Which are the most popular questions on Quora presently that also create the most discussions ?,0,The two questions are not equivalent because one is about creating a question and the other is about existing popular questions. not_equivalent
-2,How can I create the most thriving question on Quora ? Which are the most popular questions on Quora presently that also create the most discussions ?,0,equivalent
+0,Can eating precisely advance for dinner lead to weight loss ? Does eating dinner earlier in the evening help with weight loss ?,0,not_equivalent
+1,How can I create the most flourishing question on Quora ? Which are the most popular questions on Quora presently that also create the most discussions ?,0,not_equivalent
+2,How can I create the most thriving question on Quora ? Which are the most popular questions on Quora presently that also create the most discussions ?,0,not_equivalent
 3,How do I buy utilised car in India ? Which used car should I buy in India ?,0,not_equivalent
-4,Is it a bad sentence to buy a condo or a house in the Bay Area in 2017 ? Would 2017 be a good time to buy a house in Bay Area ?,1,"The two questions are equivalent because they both inquire about the suitability of purchasing a house in the Bay Area during 2017. The first question is a negative inquiry about the grammaticality of the sentence, while the second is a positive inquiry about the desirability of the time to buy. Despite different phrasings, they address the same underlying issue.equivalent"
-5,How can I create the most popular question on Quora ? Which are the most famous questions on Quora presently that ie create the most discussions ?,0,"The first question asks how to create a popular question on Quora, while the second asks which are the most famous questions currently creating discussions. They are inversely related.equivalent"
-6,""" Who is the Adam the lyrics to Blink - 182's "" "" Adam's Song "" "" are written about ? "" "" Which Blink - 182 band member wrote the lyrics to "" "" Adam's Yi "" "" ? """,0,"The two questions are equivalent because both ask about the authorship of the lyrics for the song ""Adam's Song"" by Blink-182. equivalent"
-7,What people who you've never met have infected your life the most ? Who are people you have never met who have had the greatest influence on your life ?,1,The two questions are equivalent because they both seek to identify individuals not met by the person but who have had a significant influence on their life. The slight difference in phrasing does not alter the core intent. equivalent
-8,""" Who is the Adam the lyrics to Blink - 182's "" "" Adam's Song "" "" been written about ? "" "" Which Blink - 182 band member wrote the lyrics to "" "" Adam's Song "" "" ? """,0,"The first question asks who wrote the lyrics to ""Adam's Song,"" and the second asks which band member wrote them. Since Adam is a band member, the answer to both would be Adam. Therefore, the questions are equivalent.equivalent"
+4,Is it a bad sentence to buy a condo or a house in the Bay Area in 2017 ? Would 2017 be a good time to buy a house in Bay Area ?,1,not_equivalent
+5,How can I create the most popular question on Quora ? Which are the most famous questions on Quora presently that ie create the most discussions ?,0,not_equivalent
+6,""" Who is the Adam the lyrics to Blink - 182's "" "" Adam's Song "" "" are written about ? "" "" Which Blink - 182 band member wrote the lyrics to "" "" Adam's Yi "" "" ? """,0,equivalent
+7,What people who you've never met have infected your life the most ? Who are people you have never met who have had the greatest influence on your life ?,1,equivalent
+8,""" Who is the Adam the lyrics to Blink - 182's "" "" Adam's Song "" "" been written about ? "" "" Which Blink - 182 band member wrote the lyrics to "" "" Adam's Song "" "" ? """,0,equivalent
 9,How do I buy used car in India ? Which used car should I acquires in India ?,0,not_equivalent
 10,How wo I buys used car in India ? Which used car should I buy in India ?,0,not_equivalent
-11,Is it a bad time to buy a condo or a house in the Bay Area in 2017 ? Would 2017 be a dignified time to buy a house in Bay Area ?,1,"The two questions differ in their tone and intent. The first asks if it's a bad time, while the second asks if it's a dignified time, which could imply a positive or acceptable time. Therefore, they are not equivalent.not_equivalent"
+11,Is it a bad time to buy a condo or a house in the Bay Area in 2017 ? Would 2017 be a dignified time to buy a house in Bay Area ?,1,equivalent
 12,What people who you've never met haya influenced your life the most ? Who are people you have never met who have had the greatest influence on your life ?,1,equivalent
 13,What are the trials for becoming an actuary ? What is the procedure of becoming an actuary ?,1,equivalent
-14,are aliens real or are they fake ? Do extraterrestrials exists ?,1,"The two questions are not equivalent.The first question, ""are aliens real or are they fake?"" is phrased as a yes/no question, while the second question, ""Do extraterrestrials exists?"" is phrased as a yes/no question but uses different phrasing. Additionally, ""aliens"" typically refers to beings from other planets, while ""extraterrestrials"" refers to beings from outer space, which could include planets beyond Earth. The second question also uses ""exists,"" which is a different phrasing than ""are they real"" or ""are they fake."""
+14,are aliens real or are they fake ? Do extraterrestrials exists ?,1,equivalent
 15,What is one of the biggest misconceptions people have about you ? What do you perceive to be the grands misconception people have about you ? Why do you think this misconception exists ?,1,equivalent
-16,What are some good baby woman designation starting with D ? What are some good baby girl names starting with D or H ?,0,equivalent
+16,What are some good baby woman designation starting with D ? What are some good baby girl names starting with D or H ?,0,not_equivalent
 17,Can you TRANSLATE these to English language?  Cn you translate ths from Bengali to English lagnuage?,0,equivalent
-18, What is lperational research? What is operations research?,1,not_equivalent
+18, What is lperational research? What is operations research?,1,equivalent
 19,What's the easiest way to make money online from India?  What is the beqt way to make money in ind ia?,0,not_equivalent
 20, How do you get better gredas? How can I dramatically improve my grades?,1,equivalent
 21, I am 25 year old guy and neer had a girnfrield. Is this weird? I am 25 years old. I have never had a girlfriend. Is something wrong with me?,1,equivalent
-22, How c an I create the most popular question on Quora? Which are the most popular questions on Quora presently that also create the most discussions?,0,"The two questions are asking for different information. The first is about the method to create a popular question, while the second is about identifying currently popular questions. Therefore, they are not equivalent.not_equivalent"
-23, Are ailens real or are they fake? Do aliens exists?,1,"The question ""Are allens real or are they fake?"" and ""Do aliens exist?"" are both asking about the reality of aliens. While the first question frames the issue as a choice between reality and fakeness, the second directly asks about existence. However, both are fundamentally asking whether aliens are real. Therefore, they are equivalent in meaning.equivalent"
-24," "" Who is the Adam the lyrics to Blink - 182 ' s """" Adam ' s Song """" are written abou t ?"" ""Which Blink-182 band member wrote the lyrics to """"Adam's Song""""?""",0,equivalent
+22, How c an I create the most popular question on Quora? Which are the most popular questions on Quora presently that also create the most discussions?,0,not_equivalent
+23, Are ailens real or are they fake? Do aliens exists?,1,not_equivalent
+24," "" Who is the Adam the lyrics to Blink - 182 ' s """" Adam ' s Song """" are written abou t ?"" ""Which Blink-182 band member wrote the lyrics to """"Adam's Song""""?""",0,equivalent**
 25, What was the deadliest batle in history? What was the bloodiest battle in history?,1,not_equivalent
-26, What are the best things to do in Hog Kong? What is the best thing in Hong Kong?,1,equivalent
-27, What people who you ' ve nveer jet have inluenced your life the most? Who are people you have never met who have had the greatest influence on your life?,1,The two questions are equivalent because they both inquire about individuals who have had a significant influence on your life but whom you have never met. equivalent
+26, What are the best things to do in Hog Kong? What is the best thing in Hong Kong?,1,not_equivalent
+27, What people who you ' ve nveer jet have inluenced your life the most? Who are people you have never met who have had the greatest influence on your life?,1,equivalent
 28,What was the deadliest battle in history?  What was the bloodest bttle in histroy?,1,not_equivalent
-29,Why are African-Americans so beautiful?  Why ar e hipsanics so beautiful?,0,"The two questions are not equivalent because they target different ethnic groups with different contexts and connotations. The first question about African-Americans is often framed with a positive cultural context, while the second about Hispanic people may carry different connotations or historical implications. Therefore, they are not equivalent.not_equivalent"
+29,Why are African-Americans so beautiful?  Why ar e hipsanics so beautiful?,0,equivalent
 30, Is there a reason why we should tavel alone? What are some reasons to travel alone?,1,equivalent
 31, How can I creae the most popular question on Quora? Which are the most popular questions on Quora presently that also create the most discussions?,0,not_equivalent
 32, Is it a bad tie to buy a condo or a house in the Bay Area in 2017? Would 2017 be a good time to buy a house in Bay Area?,1,equivalent
-33, What are the best tips for outlining / planning a nov el? How do I best outline my novel?,1,The two questions are equivalent.equivalent
+33, What are the best tips for outlining / planning a nov el? How do I best outline my novel?,1,not_equivalent
 34, How can you fi nd all of your Gmail acconts? How do I resolve Gmail account issues?,0,not_equivalent
 35," What is your new year resolution , short term and long term goal for 2 017? What will be your New Year's resolution for 2017?",1,equivalent
 36,How do I buy used car in India?  Whcih used car should I buy in India?,0,not_equivalent
-37, What is opeartional resarch? What is operations research?,1,"The two questions are asking about the same field, operational research, just with minor differences in wording. Therefore, they are equivalent.equivalent"
+37, What is opeartional resarch? What is operations research?,1,equivalent
 38,"""Who is the Adam the lyrics to Blink-182's """"Adam's Song"""" are written about?""  "" Which Blink - 182 band member wrte the lyrics to """" Adam ' s Song """"?""",0,equivalent
-39,How do I buy used car in India?  Whi ch used car should I buy in India?,0,"The first question asks for the process or steps to buy a used car in India, while the second asks for a recommendation or specific choice of used car. Therefore, they are not equivalent.not_equivalent"
+39,How do I buy used car in India?  Whi ch used car should I buy in India?,0,not_equivalent
 40, What is one of the biggest misconceptions people have about y ou? What do you perceive to be the biggest misconception people have about you? Why do you think this misconception exists?,1,not_equivalent
-41,I ' m going to be US President one day . What should I start doing now to achieve this ? I ' m 16 and I wanted to overthrow te US president someday . What should I pursue doing ?,1,"The first question is about achieving a positive goal of becoming the US President, whereas the second is about an illegal and impossible action. They are not equivalent.not_equivalent"
-42,How do I buy used car in India? Whcih used car should I buy in India?,0,Not equivalent.
-43,What examines operational research ? What is operations research ?,1,"The questions are asking for different aspects. The first is about the methods or topics within operational research, and the second is about its definition.equivalentThe questions are asking for different aspects. The first is about the methods or topics within operational research, and the second is about its definition.not_equivalentThe questions are asking for different aspects. The first is about the methods or topics within operational research, and the second is about its definition.not_equivalent"
+41,I ' m going to be US President one day . What should I start doing now to achieve this ? I ' m 16 and I wanted to overthrow te US president someday . What should I pursue doing ?,1,not_equivalent
+42,How do I buy used car in India? Whcih used car should I buy in India?,0,not_equivalent
+43,What examines operational research ? What is operations research ?,1,equivalent
 44,Is it a bad time to buy a condo or a house in the Bay Area in 2017 ? Would 2017 be a good chance to buy a house in Bay Area ?,1,equivalent
-45,How do I buy used car in India? Whivh used car should I buy in India?,0,"The first question asks about the process of buying a used car in India, while the second asks about the type of used car to buy. They are asking for different information. not_equivalent"
+45,How do I buy used car in India? Whivh used car should I buy in India?,0,not_equivalent
 46,What are the procedures for becoming an actuary? Why is the procedure of becoming an actuary?,1,not_equivalent
 47,How do I buy used car in India? Whidh used car should I buy in India?,0,not_equivalent
-48,""" Who is the Adam the lyrics to Blink - 182 ' s "" "" Adam ' s Song "" "" are written about ? "" "" Which Blink - 182 band member written the words to "" "" Adam ' s Track "" "" ? """,0,not_equivalent
-49,How do you get beettr grades? How can I dramatically improve my grades?,1,equivalent
-50,What are the best information for outlining / planning a noel ? How do I best outline my novel ?,1,equivalent
-51,What was the deadliest batle in history? What was the bloodiest battle in history?,1,The two questions are equivalent.equivalent
+48,""" Who is the Adam the lyrics to Blink - 182 ' s "" "" Adam ' s Song "" "" are written about ? "" "" Which Blink - 182 band member written the words to "" "" Adam ' s Track "" "" ? """,0,equivalent
+49,How do you get beettr grades? How can I dramatically improve my grades?,1,not_equivalent
+50,What are the best information for outlining / planning a noel ? How do I best outline my novel ?,1,not_equivalent
+51,What was the deadliest batle in history? What was the bloodiest battle in history?,1,equivalent
 52,How do I buy used car in India? Wcihh used car should I buy in India?,0,not_equivalent
-53,How do I buy used car in India? Whifh used car should I buy in India?,0,The two questions are equivalent.equivalent
-54,""" Who be the Adam the lyrics to Blink - 182 ' s "" "" Adam ' s Song "" "" were written about ? "" "" Which Blink - 182 band member wrote the lyrics to "" "" Adam ' s Song "" "" ? """,0,not_equivalent
-55,Will consuming only eat dinner dinner tip to fitness loss ? Does eating dinner earlier in the evening help with weight loss ?,0,not_equivalent
-56,Why Tamil Nadu Universities are no good ? Why equal yhe 10th universities incapable to exams 100 % in Tamil Nadu ?,0,"The two questions are equivalent because both inquire about the effectiveness of universities in Tamil Nadu, albeit through different aspects—quality and exam results.equivalent"
-57,How do I buy used car in India? Whch used car should I buy in India?,0,"The first question asks about the process of buying a used car in India, while the second asks for a specific used car model recommendation. They are not equivalent.not_equivalent"
+53,How do I buy used car in India? Whifh used car should I buy in India?,0,not_equivalent
+54,""" Who be the Adam the lyrics to Blink - 182 ' s "" "" Adam ' s Song "" "" were written about ? "" "" Which Blink - 182 band member wrote the lyrics to "" "" Adam ' s Song "" "" ? """,0,equivalent
+55,Will consuming only eat dinner dinner tip to fitness loss ? Does eating dinner earlier in the evening help with weight loss ?,0,equivalent
+56,Why Tamil Nadu Universities are no good ? Why equal yhe 10th universities incapable to exams 100 % in Tamil Nadu ?,0,equivalent
+57,How do I buy used car in India? Whch used car should I buy in India?,0,not_equivalent
 58,How am I make the most popular question along Quora? Which are the most popular questions on Quora presently that also create the most discussions?,0,not_equivalent
 59,How do I buy used car in India? Whih used car should I buy in India?,0,not_equivalent
-60,How can you find all of your Gmail accounts ? How shall I find Gmail account messages ?,0,"The two questions are not equivalent. The first question asks about finding all Gmail accounts, while the second asks about finding messages in a Gmail account. They are related but distinct.not_equivalent"
-61,are alien realistic or are they fake ? Do aliens exists ?,1,"The first question asks whether aliens are real or fake, focusing on their nature. The second question directly asks if aliens exist. Both relate to aliens' existence but differ in focus. Therefore, they are not equivalent.not_equivalent"
-62,How can I build the most famous questions on Quora ? Which are the most popular questions on Quora presently that also create the most discussions ?,0,"The first question asks how to build the most famous questions on Quora, while the second asks which are the most popular and create the most discussions. They are not equivalent.not_equivalent"
+60,How can you find all of your Gmail accounts ? How shall I find Gmail account messages ?,0,not_equivalent
+61,are alien realistic or are they fake ? Do aliens exists ?,1,equivalent
+62,How can I build the most famous questions on Quora ? Which are the most popular questions on Quora presently that also create the most discussions ?,0,not_equivalent
 63,What are some okay child girl designations starting with D ? What are some good baby girl names starting with D or H ?,0,not_equivalent
 64,How do I buy used car in India ? Which used car best I buy in India ?,0,not_equivalent
 65,I'm going to remain US President one day . What should I began doing now to achieve this ? I'm 16 and I want to become the US president someday . What should I start doing ?,1,equivalent
 66,How could an HIV - positive person have children ? Would you grown an HIV live children ?,0,not_equivalent
-67,How can I dear state most popular question on Quora ? Which are the most popular questions on Quora presently that also create the most discussions ?,0,equivalent
+67,How can I dear state most popular question on Quora ? Which are the most popular questions on Quora presently that also create the most discussions ?,0,not_equivalent
 68,Honestly rocket computer study language fundamental prize cause engineering . ? Do we get to chose only one computer language when we are studying engineering ?,0,not_equivalent
 69,Why Tamil Nadu Universities are no good ? Rector fewer sa 10th universities scarce to slip 100 % at Tamil Nadu ?,0,not_equivalent
 70,""" Who is on Adam the lyrics to Blink - 182 ' s "" "" Adam ' s Song "" "" was written for ? "" "" Which Blink - 182 band member wrote the lyrics to "" "" Adam ' s Song "" "" ? """,0,equivalent
-71,Is Judith Alexander a secretary? Did Judith Alexander use to be a secretary?,0,equivalent
-72,Is Barbara Lewis going to be a person? Is Barbara Lewis becoming a person?,1,equivalent
-73,Is Steven Taylor an attorney? Did Steven Taylor use to be an attorney?,0,"The two questions are not equivalent. The first asks about Steven Taylor's current profession, while the second inquires about his past profession, which could imply a change in his career path.not_equivalent"
-74,How can I become a humble person? How can I become a person who is not proud?,1,equivalent
+71,Is Judith Alexander a secretary? Did Judith Alexander use to be a secretary?,0,not_equivalent
+72,Is Barbara Lewis going to be a person? Is Barbara Lewis becoming a person?,1,not_equivalent
+73,Is Steven Taylor an attorney? Did Steven Taylor use to be an attorney?,0,equivalent
+74,How can I become a humble person? How can I become a person who is not proud?,1,not_equivalent
 75,Is Joe Alexander an administrator? Did Joe Alexander use to be an administrator?,0,not_equivalent
-76,Do you have to vet your cat before releasing it? Do you have to vet your cat after releasing it?,0,2.
+76,Do you have to vet your cat before releasing it? Do you have to vet your cat after releasing it?,0,not_equivalent
 77,Is Jerry Howard a secretary? Did Jerry Howard use to be a secretary?,0,equivalent

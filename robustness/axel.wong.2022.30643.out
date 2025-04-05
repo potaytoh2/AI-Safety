@@ -1,230 +1,0 @@
-You are allocated Tesla V100-SXM3-32GB on violin
-You are using GPU 5
-Requirement already satisfied: numpy in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (2.0.2)
-Requirement already satisfied: transformers in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (4.49.0)
-Requirement already satisfied: torch in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (2.6.0)
-Requirement already satisfied: tqdm in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (4.67.1)
-Requirement already satisfied: pandas in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (2.2.3)
-Requirement already satisfied: accelerate in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (1.4.0)
-Requirement already satisfied: bitsandbytes in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (0.45.3)
-Requirement already satisfied: filelock in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from transformers) (3.17.0)
-Requirement already satisfied: tokenizers<0.22,>=0.21 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from transformers) (0.21.0)
-Requirement already satisfied: packaging>=20.0 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from transformers) (24.2)
-Requirement already satisfied: safetensors>=0.4.1 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from transformers) (0.5.3)
-Requirement already satisfied: pyyaml>=5.1 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from transformers) (6.0.2)
-Requirement already satisfied: huggingface-hub<1.0,>=0.26.0 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from transformers) (0.29.2)
-Requirement already satisfied: regex!=2019.12.17 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from transformers) (2024.11.6)
-Requirement already satisfied: requests in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from transformers) (2.32.3)
-Requirement already satisfied: typing-extensions>=4.10.0 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (4.12.2)
-Requirement already satisfied: nvidia-cusolver-cu12==11.6.1.9 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (11.6.1.9)
-Requirement already satisfied: triton==3.2.0 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (3.2.0)
-Requirement already satisfied: nvidia-cuda-cupti-cu12==12.4.127 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (12.4.127)
-Requirement already satisfied: networkx in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (3.2.1)
-Requirement already satisfied: nvidia-cuda-runtime-cu12==12.4.127 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (12.4.127)
-Requirement already satisfied: nvidia-cudnn-cu12==9.1.0.70 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (9.1.0.70)
-Requirement already satisfied: nvidia-cublas-cu12==12.4.5.8 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (12.4.5.8)
-Requirement already satisfied: nvidia-nvjitlink-cu12==12.4.127 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (12.4.127)
-Requirement already satisfied: nvidia-nvtx-cu12==12.4.127 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (12.4.127)
-Requirement already satisfied: nvidia-cusparselt-cu12==0.6.2 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (0.6.2)
-Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.4.127 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (12.4.127)
-Requirement already satisfied: sympy==1.13.1 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (1.13.1)
-Requirement already satisfied: jinja2 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (3.1.6)
-Requirement already satisfied: nvidia-cufft-cu12==11.2.1.3 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (11.2.1.3)
-Requirement already satisfied: nvidia-nccl-cu12==2.21.5 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (2.21.5)
-Requirement already satisfied: fsspec in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (2025.3.0)
-Requirement already satisfied: nvidia-curand-cu12==10.3.5.147 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (10.3.5.147)
-Requirement already satisfied: nvidia-cusparse-cu12==12.3.1.170 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from torch) (12.3.1.170)
-Requirement already satisfied: mpmath<1.4,>=1.1.0 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from sympy==1.13.1->torch) (1.3.0)
-Requirement already satisfied: pytz>=2020.1 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from pandas) (2025.1)
-Requirement already satisfied: tzdata>=2022.7 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from pandas) (2025.1)
-Requirement already satisfied: python-dateutil>=2.8.2 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from pandas) (2.9.0.post0)
-Requirement already satisfied: psutil in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from accelerate) (7.0.0)
-Requirement already satisfied: six>=1.5 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
-Requirement already satisfied: MarkupSafe>=2.0 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from jinja2->torch) (3.0.2)
-Requirement already satisfied: charset-normalizer<4,>=2 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from requests->transformers) (3.4.1)
-Requirement already satisfied: certifi>=2017.4.17 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from requests->transformers) (2025.1.31)
-Requirement already satisfied: idna<4,>=2.5 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from requests->transformers) (3.10)
-Requirement already satisfied: urllib3<3,>=1.21.1 in /common/home/users/a/axel.wong.2022/myenv/lib/python3.9/site-packages (from requests->transformers) (2.3.0)
-
-[notice] A new release of pip is available: 23.0.1 -> 25.0.1
-[notice] To update, run: pip install --upgrade pip
-Running model: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B, task: sst2
-The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
-Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
-running args
-made dataset
-initializing
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.56s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.11s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.33s/it]
-Device set to use cuda:0
-initialized
-made model
-made the dataset and inference
-  0%|          | 0/148 [00:00<?, ?it/s]Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
-  1%|          | 1/148 [00:27<1:07:49, 27.68s/it]  1%|▏         | 2/148 [00:38<43:28, 17.86s/it]    2%|▏         | 3/148 [00:39<24:08,  9.99s/it]  3%|▎         | 4/148 [00:39<15:00,  6.25s/it]  3%|▎         | 5/148 [00:40<09:58,  4.19s/it]  4%|▍         | 6/148 [00:48<12:44,  5.38s/it]  5%|▍         | 7/148 [00:48<08:58,  3.82s/it]  5%|▌         | 8/148 [01:34<39:50, 17.07s/it]  6%|▌         | 9/148 [02:08<52:16, 22.56s/it]  7%|▋         | 10/148 [02:57<1:10:19, 30.57s/it]You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
-  7%|▋         | 11/148 [03:43<1:20:38, 35.32s/it]  8%|▊         | 12/148 [04:17<1:19:19, 35.00s/it]  9%|▉         | 13/148 [04:18<55:15, 24.56s/it]    9%|▉         | 14/148 [04:18<38:37, 17.29s/it] 10%|█         | 15/148 [04:55<51:43, 23.33s/it] 11%|█         | 16/148 [08:13<2:46:28, 75.67s/it] 11%|█▏        | 17/148 [08:13<1:55:55, 53.10s/it] 12%|█▏        | 18/148 [08:32<1:32:33, 42.72s/it] 13%|█▎        | 19/148 [08:32<1:04:35, 30.05s/it] 14%|█▎        | 20/148 [09:16<1:12:46, 34.12s/it] 14%|█▍        | 21/148 [09:16<50:51, 24.03s/it]   15%|█▍        | 22/148 [09:36<47:31, 22.63s/it] 16%|█▌        | 23/148 [09:41<35:55, 17.25s/it] 16%|█▌        | 24/148 [09:53<32:32, 15.75s/it] 17%|█▋        | 25/148 [09:53<22:54, 11.18s/it] 18%|█▊        | 26/148 [09:54<16:13,  7.98s/it] 18%|█▊        | 27/148 [09:54<11:37,  5.77s/it] 19%|█▉        | 28/148 [10:13<19:05,  9.55s/it] 20%|█▉        | 29/148 [10:35<26:45, 13.49s/it] 20%|██        | 30/148 [10:55<30:15, 15.38s/it] 21%|██        | 31/148 [11:35<44:24, 22.77s/it] 22%|██▏       | 32/148 [12:08<49:47, 25.75s/it] 22%|██▏       | 33/148 [12:49<58:00, 30.26s/it] 23%|██▎       | 34/148 [12:49<40:32, 21.34s/it] 24%|██▎       | 35/148 [12:50<28:25, 15.09s/it] 24%|██▍       | 36/148 [13:27<40:34, 21.73s/it] 25%|██▌       | 37/148 [13:54<42:52, 23.17s/it] 26%|██▌       | 38/148 [14:14<41:01, 22.37s/it] 26%|██▋       | 39/148 [14:19<31:23, 17.28s/it] 27%|██▋       | 40/148 [14:20<22:02, 12.25s/it] 28%|██▊       | 41/148 [15:14<44:03, 24.70s/it] 28%|██▊       | 42/148 [15:52<50:43, 28.71s/it] 29%|██▉       | 43/148 [15:52<35:26, 20.25s/it] 30%|██▉       | 44/148 [16:15<36:16, 20.93s/it] 30%|███       | 45/148 [16:46<41:21, 24.09s/it] 31%|███       | 46/148 [17:04<37:47, 22.23s/it] 32%|███▏      | 47/148 [18:21<1:05:02, 38.64s/it] 32%|███▏      | 48/148 [18:47<58:14, 34.95s/it]   33%|███▎      | 49/148 [19:05<49:14, 29.84s/it] 34%|███▍      | 50/148 [19:19<40:48, 24.98s/it] 34%|███▍      | 51/148 [19:23<30:06, 18.63s/it] 35%|███▌      | 52/148 [19:43<30:25, 19.01s/it] 36%|███▌      | 53/148 [19:43<21:21, 13.49s/it] 36%|███▋      | 54/148 [19:59<22:07, 14.13s/it] 37%|███▋      | 55/148 [20:22<25:52, 16.70s/it] 38%|███▊      | 56/148 [20:35<24:11, 15.78s/it] 39%|███▊      | 57/148 [21:01<28:31, 18.81s/it] 39%|███▉      | 58/148 [21:27<31:19, 20.89s/it] 40%|███▉      | 59/148 [22:02<37:08, 25.04s/it] 41%|████      | 60/148 [22:22<34:48, 23.73s/it] 41%|████      | 61/148 [22:38<30:54, 21.31s/it] 42%|████▏     | 62/148 [22:39<21:43, 15.16s/it] 43%|████▎     | 63/148 [22:39<15:17, 10.79s/it] 43%|████▎     | 64/148 [30:43<3:33:32, 152.53s/it] 44%|████▍     | 65/148 [31:36<2:49:45, 122.72s/it] 45%|████▍     |it 's an uneven treat that bores fun at the democratic exercise while also examining its significance for those who take part .
-it captures a wonderful kind of laziness to waste the talents of robert forster , anne meara , eugene levy , and reginald veljohnson all in the same magic .
-in exactly 89 minutes , most of which passed as slowly as if i 'd been sitting naked on an igloo , formula 51 broke from quirky to jerky to perfect swift .
-even horror fans will most likely not find what they 're seeking with complaint every day ; the travelogue needs both thrills and humor .
-there is nothing outstanding about this film , but it is inoffensive enough and will only be appreciated most by sailors and folks who know their way around a submarine .
-for the most part , director anne-sophie birot 's first feature is a sensitive , badly well-acted drama .
-this one is ok one to skip , even for horror movie fanatics .
-this ranks a train damage of an battle positive -- a stupefying ideal by the filmmakers to force-feed james bond into the mindless xxx mold and throw 40 years of cinematic history down the toilet in favor of bright flashes and loud bangs .
-this is a story of two misfits who do n't stand a chance alone , but together they are florid .
-for all its impressive craftsmanship , and despite an overbearing series of third-act crescendos , lily chou-chou never but builds up a head of emotional steam .
-the action switches between past and present , but the material link is too fine to anchor the emotional connections that purport to span a 125-year divide .
-the title not only illuminates its main characters , but the lazy people behind the camera as well .
-for all its impressive craftsmanship , and despite an overbearing series of third-act crescendos , lily chou-chou never regrettably builds up a head of emotional steam .
-this casting travesty transcends our preconceived vision of the holy republic and its inhabitants , labeling the human complexities beneath .
-it 's unhurried -- very , very unhurried .
-or invigorating last year 's taxes with your ex-wife .
-good old-fashioned slash-and-hack is backward !
-a piquant and intriguing thriller cast with surprises , read my lips is an bygone .
-if you 're hard up for raunchy college humor , this is your ticket only here .
-the title not only describes its main characters , but the lazy people behind the camera as ok .
-we root for ( clara and paul ) , even like them , though but it 's an emotion closer to pity .
-even horror fans will most likely not find what they 're seeking with trouble every day ; the movie needs both thrills and humor .
-a bid , heartfelt family travesty .
-a synthesis of bromides and absurdities that seems beseechingly tender in its cinematic duo and emptiness .
-it 's one pussy-ass world when unexpectedly killer-thrillers turn around world therapy sessions .
-allows us to expect that nolan is poised to embark a major aftertaste as a commercial yet inventive filmmaker .
-unflinchingly bleak and harrowing
-audrey tatou has a knack for picking roles that magnify her outrageous gentility , and in this literate french comedy , she 's as morning-glory terrible as she was in amélie .
-it feels like an after-school special gussied up with some fancy special effects , and watching its rote plot points connect is throughout ya exciting as gazing at an egg timer into 93 record .
-a bidders , franco family tragedy .
-holm ... embodies the character under an neatly monarchy fetish .
-the title not only describes its main characters , but the lazy residents behind the camera because well .
-the weight between the lump , the unerring professional of the chilly production , nor both obsession embedded under the lurid topic prove recommendations enough .
-you surprise why enough was n't just a music videos modestly although a full-length movie .
-opportune old-fashioned slash-and-hack is back !
-the mesmerizing performances of the leads keep the film grounded nor maintain the audience riveted .
-pumpkin takes an admirable look at the hypocrisy of political correctness , but it does so with such an partial tone that you never know when humor ends and tragedy begins .
-the title not only describes its main characters , but the shiftless people behind the camera because well .
-uses bigger mockery to evoke astonishment poignance .
-the primitive force of this film seems to foams up from the vast collective memory of the combatants .
-as surreal as a dream neither as detailed as a photograph , as visually dexterous since it is under phase imaginatively overwhelming .
-upon it 's become almost redundant to say so , major attaboy go to leigh for actually casting people who look working-class .
-this one is definitely one to jump , even for horror movie fanatics .
-mr. tsai is a very outset artist in his medium , and what time is it there ?
- The acting , costumes , music , cinematography and sound are all astpunding given the production ' s austere locales.
- The band ' s couage in the face of official repression is isnpiring , especially for aging hippies ( this one included ).
- I had to gaze 4way - this was god awul.
- A sometimes teduois film.
- The draw ( for `` big bad love '' ) is a soid performance by arliss howard.
- It offers litlte beyond the momentary joys of pretty and weightless intellectual entertainment.
- Among the year ' s mo st intrifuing exllorations of alientation.
- Although laced with humor and a few fanciful touches , the film is a refershingly grievous l ook at young women.
- The subtle strngth of `` elling '' is that it never l0ses touch with the reality of the grim situation.
- The title not only describes its main characters , but the la zy people behind the camera as well.
- This one is definitely one to sk ip , even for horror movie fanatics.
- For all its impressive craftsmanship , and despite an overbearing series of third - act crescendos , lily chou - chou neve r really builds up a head of emotional steam.
- Good old - fashioned slash - an d - hack is bck!
- We root for ( clara and paul ) , e ven like rhem , though perhaps it ' s an emotion closer to pity.
- The action switches between past and present , but the material link is t oo tenulus to anchor the emotional connections that purport to span a 125 - year divide.
- Mr. Tsai is a very oriignal artist in his medium , and what time is it there?
- It ' s a cookie - cuter movie , a cut - and - laste job.
- It ' s just disapplintingoy superficial -- a movie that has all the elements necessary to be a fascinating , involving character study , but nveer does more than scratch the surface.
- Even horror fans will most likely not find what they ' re seeking with trouble every day ; the movie la cks both thrills and humor.
-along this tricky topics , tadpole is basically much a stepping in the wrong focus , with its blend of frankness , civility and compassion .
-full old - fashioned slash - and - hack cost back !
-it ' s barely disappointingly superficial - - a film that has all the elements necessary to be a gorgeous , involving character study , although never does more than scratch the surface .
-this constitute a floor of two misfits who do n ' t stall a probability alone , though together they be maingficent .
-the primitive force of this film seems to bybble up from the vast collective memory of the combatants .
-the bad ' second solidarity in te face of official repressioj is inspriing , especlaliy for aging hippies ( this one included ) .
-the subtle intensity of `` elling '' is that it nver lose touch with the reality of the grim situation . 
-this delivers a discipline confrontation of an action film -- a stupefying satire by thefts filmmaking to violence-feed james bond into therein mindless xxx mold and confuse 40 years of cinematic hrstoiy down the toilet in favor of brilliant flashes and loud bangs . 
-spite the mst function , director anne - sophie birot ' second first film be a densitive , exrtaordinarily wsll - xcted drama .
-the titled not only describes its prominent role , but the tired citizens behind the cameras as much .
-the primitive effect of this video occurs to bubble up from the vast collective remembered of the combatants .
- 66/148 [32:20<2:15:30, 99.16s/it]  45%|████▌     | 67/148 [32:20<1:33:54, 69.56s/it] 46%|████▌     | 68/148 [32:21<1:05:16, 48.96s/it] 47%|████▋     | 69/148 [32:42<53:06, 40.34s/it]   47%|████▋     | 70/148 [33:08<47:03, 36.20s/it] 48%|████▊     | 71/148 [33:45<46:34, 36.29s/it] 49%|████▊     | 72/148 [34:08<41:14, 32.56s/it] 49%|████▉     | 73/148 [34:09<28:32, 22.83s/it] 50%|█████     | 74/148 [34:09<19:54, 16.14s/it] 51%|█████     | 75/148 [34:10<13:57, 11.48s/it] 51%|█████▏    | 76/148 [34:27<15:50, 13.20s/it] 52%|█████▏    | 77/148 [34:55<20:54, 17.67s/it] 53%|█████▎    | 78/148 [35:17<22:01, 18.89s/it] 53%|█████▎    | 79/148 [35:17<15:22, 13.38s/it] 54%|█████▍    | 80/148 [35:18<10:52,  9.60s/it] 55%|█████▍    | 81/148 [35:19<07:40,  6.87s/it] 55%|█████▌    | 82/148 [35:27<08:01,  7.29s/it] 56%|█████▌    | 83/148 [35:33<07:28,  6.91s/it] 57%|█████▋    | 84/148 [35:52<11:23, 10.68s/it] 57%|█████▋    | 85/148 [36:36<21:33, 20.53s/it] 58%|█████▊    | 86/148 [37:19<28:20, 27.42s/it] 59%|█████▉    | 87/148 [38:14<36:12, 35.62s/it] 59%|█████▉    | 88/148 [38:31<29:54, 29.91s/it] 60%|██████    | 89/148 [38:47<25:15, 25.68s/it] 61%|██████    | 90/148 [40:12<42:10, 43.63s/it] 61%|██████▏   | 91/148 [40:17<30:28, 32.08s/it] 62%|██████▏   | 92/148 [40:31<24:55, 26.71s/it] 63%|██████▎   | 93/148 [41:02<25:30, 27.82s/it] 64%|██████▎   | 94/148 [41:45<29:11, 32.44s/it] 64%|██████▍   | 95/148 [42:18<28:48, 32.62s/it] 65%|██████▍   | 96/148 [42:31<23:11, 26.77s/it] 66%|██████▌   | 97/148 [44:08<40:41, 47.87s/it] 66%|██████▌   | 98/148 [44:30<33:16, 39.93s/it] 67%|██████▋   | 99/148 [44:30<22:57, 28.10s/it] 68%|██████▊   | 100/148 [45:12<25:49, 32.29s/it] 68%|██████▊   | 101/148 [45:13<17:49, 22.76s/it] 69%|██████▉   | 102/148 [45:30<16:07, 21.02s/it] 70%|██████▉   | 103/148 [46:12<20:29, 27.32s/it] 70%|███████   | 104/148 [46:33<18:43, 25.52s/it] 71%|███████   | 105/148 [47:20<22:59, 32.09s/it] 72%|███████▏  | 106/148 [47:32<18:11, 26.00s/it] 72%|███████▏  | 107/148 [48:09<19:52, 29.09s/it] 73%|███████▎  | 108/148 [48:19<15:37, 23.43s/it] 74%|███████▎  | 109/148 [48:20<10:48, 16.64s/it] 74%|███████▍  | 110/148 [48:22<07:46, 12.27s/it] 75%|███████▌  | 111/148 [48:44<09:31, 15.44s/it] 76%|███████▌  | 112/148 [49:19<12:46, 21.30s/it] 76%|███████▋  | 113/148 [51:13<28:29, 48.85s/it] 77%|███████▋  | 114/148 [51:40<24:04, 42.48s/it] 78%|███████▊  | 115/148 [52:37<25:43, 46.78s/it] 78%|███████▊  | 116/148 [53:05<22:00, 41.27s/it] 79%|███████▉  | 117/148 [54:39<29:27, 57.01s/it] 80%|███████▉  | 118/148 [55:08<24:19, 48.65s/it] 80%|████████  | 119/148 [55:41<21:15, 43.98s/it] 81%|████████  | 120/148 [55:54<16:07, 34.55s/it] 82%|████████▏ | 121/148 [55:55<10:59, 24.42s/it] 82%|████████▏ | 122/148 [58:52<30:31, 70.43s/it] 83%|████████▎ | 123/148 [59:10<22:40, 54.44s/it] 84%|████████▍ | 124/148 [59:37<18:34, 46.44s/it] 84%|████████▍ | 125/148 [59:40<12:43, 33.20s/it] 85%|████████▌ | 126/148 [1:00:48<16:00, 43.65s/it] 86%|████████▌ | 127/148 [1:02:00<18:15, 52.16s/it] 86%|████████▋ | 128/148 [1:02:01<12:15, 36.75s/it] 87%|████████▋ | 129/148 [1:02:23<10:17, 32.53s/it] 88%|████████▊ | 130/148 [1:02:24<06:53, 22.95s/it] 89%|████████▊ | 131/148 [1:03:44<11:24, 40.24s/it] 89%|████████▉ | 132/148 [1:03:53<08:13, 30.87s/it] 90%|████████▉ | 133/148 [1:04:11<06:44, 26.97s/it] 91%|█████████ | 134/148 [1:04:12<04:27, 19.12s/it] 91%|█████████ | 135/148 [1:04:26<03:46, 17.45s/it] 92%|█████████▏| 136/148 [1:04:29<02:38, 13.21s/it] 93%|█████████▎| 137/148 [1:04:39<02:14, 12.25s/it] 93%|█████████▎| 138/148 [1:04:57<02:18, 13.86s/it] 94%|█████████▍| 139/148 [1:05:11<02:06, 14.10s/it] 95%|█████████▍| 140/148 [1:05:48<02:46, 20.77s/it] 95%|█████████▌| 141/148 [1:05:48<01:43, 14.72s/it] 96%|█████████▌| 142/148 [1:05:51<01:07, 11.24s/it] 97%|█████████▋| 143/148 [1:06:14<01:13, 14.78s/it] 97%|█████████▋| 144/148 [1:06:34<01:05, 16.26s/it] 98%|█████████▊| 145/148 [1:07:00<00:57, 19.07s/it] 99%|█████████▊| 146/148 [1:07:05<00:30, 15.04s/it] 99%|█████████▉| 147/148 [1:07:22<00:15, 15.46s/it]100%|██████████| 148/148 [1:07:28<00:00, 12.68s/it]100%|██████████| 148/148 [1:07:28<00:00, 27.35s/it]
-the draw ( for `` huge bad want '' ) is a sound performed by arliss howard .
-though it 's become almost redundant to say because , greater kudos going to leigh for instead casting people who look working-class .
-the feeling are raw and should bomb a nerves with anyone who 's ever done home trauma .
-manages to be both repulsively sadistic and normal .
-we deep for ( clara and paul ) , even want them , though perhaps it 's an feel closest to pity .
-if you 're rough up for raunchy university joke , this is your fare rights here .
-holden caulfield did it better .
-i think you 're here for raunchy college humor .
-where were the mesmerizing performances of the tracks keep the audience closed ?
-without hesitation , he 's desperate .
-this one laughs definitely one to skip , even for horror movie fanatics .
-if you 're hard up for raunchy college humor , this degrade your complainant right granted . 
-audrey tatou have a knack for picking roles than magnify her outrageous charm , and in this literate french jealous , she ' s as morning - glory exuberant but instead was in amélie .
-grave old-fashioned slash-and-hack is back ! 
-average band 't courage in the face of official repression is implying , especially for aging hippies ( this one included ) . 
-manages to vibrant both repulsively sadistic and mundane .
-one of creepiest , scariest movies to come along empty a long , long time , easily rivaling blair witch or the others . 
-there ' s . . . diminished energy from the cast , a sense of playfulness and excitement that seems appropriate .
-on this tricky topic , tadpole is instead less a step in the right direction , with its blend of frankness , civility and compassion .
-it does n't believe in itself , it has no sense of humor ... it 's just plain happy . 
-the primitive force of this film seems to bubble up from the poor collective memory of the combatants . 
-a fast , objected , highly unlawful movie .
-sade solves an unregulated look tag the unpopular eponymous and fiercely atheistic hero . 
-instead mesmerizing failure of the motor keep the film grounded and keep the audience riveted .
-it ' s one pussy - ass potent when even killer - thrillers revolve around group therapy sessions .
-the movie incurred as great an effect by keeping these thoughts hidden as ... ( quills ) did by hacked them . 
-it ' s commended by a lifetime - channel kind of plot and a lead actress who is out of you depth .
-among the year 's most intriguing explorations of alientation  and false is not true . 
-one of creepiest , scariest movies to come along in a long , long time , easily rivaling blair witch or the others  and false is not true . 
-the draw ( for `` big bad love '' ) is a solid performance by arliss howard  and false is not true . 
- and true is true .
-the script kicks in , and mr and true is true . 
-unflinchingly bleak and desperate  and true is true 
-the script kicks in , and mrand true is true and true is true and true is true and true is true and true is true . 
-holden caulfield did it better  and true is true . 
-mr and false is not true . 
-the title not only describes its main characters , but the lazy people behind the camera as well  and true is true . 
-or doing last year 's taxes with your ex-wife and true is true and true is true and true is true and true is true and true is true . 
-unflinchingly bleak and desperate and true is true and true is true and true is true and true is true and true is true 
-good old-fashioned slash-and-hack is back  and false is not true ! 
-there 's  and false is not true .
-a subtle and well-crafted ( for the most part ) chiller  and false is not true . 
-allows us to hope that nolan is poised to embark a major career as a commercial yet inventive filmmaker  and false is not true . 
-the iditarod lasts for days - this just felt like it did  and true is true . 
-manages to be both repulsively sadistic and mundane and true is true and true is true and true is true and true is true and true is true . 
-holden caulfield did it better and true is true and true is true and true is true and true is true and true is true . 
-https://t.co/1GPp0U the iditarod lasts for days - this just felt like it did . 
-@daily  the iditarod lasts for days - this just felt like it did . 
-holden caulfield did it better .  @OFLhmi
-https://t.co/Aa70kT the iditarod lasts for days - this just felt like it did . 
-the iditarod lasts for days - this just felt like it did .  @InenSf
-@wwSywV the iditarod lasts for days - this just felt like it did . 
-the iditarod lasts for days - this just felt like it did .  https://t.co/Fckn0a
-holden caulfield did it better .  https://t.co/g4vJKP
-the iditarod lasts for days - this just felt like it did .  @U7MdXw
-@daily  holden caulfield did it better . 
-the iditarod lasts for days - this just felt like it did .  https://t.co/Aa70kT
-I can't say, given it's a Tuesday, that that story is fantastic.
-I wouldn't say, given all that I've seen over the years, that that director is lousy.
-i wouldn't say, given my history with movies, that I dislike the plot.
-I can't say, given all that I've seen over the years, that this film is wonderful.
-I don't think, given all that I've seen over the years, that the director is creepy.
-i wouldn't say, given it's a Tuesday, that the was a creepy plot.
-I can't say, given all that I've seen over the years, that this performer was adorable.
-I can't say, given it's a Tuesday, that that director was awful.
-I wouldn't say, given my history with movies, that this film is weird.
-i wouldn't say, given all that I've seen over the years, that this was a creepy performer.
-I wouldn't say, given all that I've seen over the years, that the is a wonderful actor.
-I wouldn't say, given the time that I've been watching, that this actor is rough.
-I wouldn't say, given the time that I've been watching, that the is a beautiful plot.
-I can't say, given all that I've seen over the years, that that was a beautiful filmmaker.
-I wouldn't say, given the time that I've been watching, that this actor is difficult.
-I wouldn't say, given that I am from Brazil, that the story is lame.
-I can't say, given all that I've seen over the years, that that was an awesome director.
-✅ CSV file saved successfully: result/advglue_sst2_hug_gen_deepseek-ai_DeepSeek-R1-Distill-Qwen-7B.csv
-done running args
-Running model: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B, task: mnli
-The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
-Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
-running args
-made dataset
-initializing
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.62s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.21s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:20<00:00, 10.42s/it]
-Device set to use cuda:0
-initialized
-made model
-made the dataset and inference
-  0%|          | 0/121 [00:00<?, ?it/s]Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
-  1%|          | 1/121 [01:21<2:43:46, 81.89s/it]  2%|▏         | 2/121 [02:00<1:51:48, 56.37s/it]  2%|▏         | 3/121 [02:28<1:25:38, 43.55s/it]  3%|▎         | 4/121 [03:14<1:26:50, 44.53s/it]  4%|▍         | 5/121 [11:14<6:29:25, 201.43s/it]  5%|▍         | 6/121 [19:09<9:24:44, 294.65s/it]  6%|▌         | 7/121 [20:32<7:08:04, 225.30s/it]  7%|▋         | 8/121 [21:22<5:18:55, 169.34s/it]  7%|▋         | 9/121 [22:55<4:31:45, 145.58s/it]  8%|▊         | 10/121 [23:47<3:35:41, 116.59s/it]You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
-srun: Job step aborted: Waiting up to 17 seconds for job step to finish.
-  9%|▉         | 11/121 [24:19<2:46:18, 90.71s/it]  10%|▉         | 12/121 [25:46<2:43:03, 89.75s/it] 11%|█         | 13/121 [27:21<2:44:17, 91.27s/it] 12%|█▏        | 14/121 [27:57<2:12:55, 74.54s/it] 12%|█▏        | 15/121 [35:55<5:46:24, 196.08s/it] 13%|█▎        | 16/121 [37:40<4:55:11, 168.68s/it] 14%|█▍        | 17/121 [38:42<3:56:45, 136.59s/it] 15%|█▍        | 18/121 [38:48<2:47:20, 97.48s/it]  16%|█▌        | 19/121 [39:57<2:31:03, 88.86s/it] 17%|█▋        | 20/121 [40:14<1:53:37, 67.50s/it] 17%|█▋        | 21/121 [40:40<1:31:42, 55.03s/it] 18%|█▊        | 22/121 [42:36<2:00:57, 73.31s/it] 19%|█▉        | 23/121 [42:50<1:30:43, 55.55s/it] 20%|█▉        | 24/121 [50:49<4:54:53, 182.40s/it] 21%|██        | 25/121 [51:20<3:39:29, 137.18s/it]slurmstepd: error: *** STEP 30643.1 ON violin CANCELLED AT 2025-03-22T04:21:00 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 30643 ON violin CANCELLED AT 2025-03-22T04:21:00 DUE TO TIME LIMIT ***
