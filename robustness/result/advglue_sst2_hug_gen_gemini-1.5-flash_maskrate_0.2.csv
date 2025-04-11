@@ -1,7 +1,7 @@
 idx,content,true_label,pred_label
-0,it 's an uneven treat that bores fun at the democratic exercise while also examining its significance for those who take part .,1,negative
+0,it 's an uneven treat that bores fun at the democratic exercise while also examining its significance for those who take part .,1,positive
 1,"it captures a wonderful kind of laziness to waste the talents of robert forster , anne meara , eugene levy , and reginald veljohnson all in the same magic .",0,negative
-2,"in exactly 89 minutes , most of which passed as slowly as if i 'd been sitting naked on an igloo , formula 51 broke from quirky to jerky to perfect swift .",0,positive
+2,"in exactly 89 minutes , most of which passed as slowly as if i 'd been sitting naked on an igloo , formula 51 broke from quirky to jerky to perfect swift .",0,negative
 3,even horror fans will most likely not find what they 're seeking with complaint every day ; the travelogue needs both thrills and humor .,0,negative
 4,"there is nothing outstanding about this film , but it is inoffensive enough and will only be appreciated most by sailors and folks who know their way around a submarine .",1,negative
 5,"for the most part , director anne-sophie birot 's first feature is a sensitive , badly well-acted drama .",1,negative
@@ -26,7 +26,7 @@ idx,content,true_label,pred_label
 24,it 's one pussy-ass world when unexpectedly killer-thrillers turn around world therapy sessions .,0,negative
 25,allows us to expect that nolan is poised to embark a major aftertaste as a commercial yet inventive filmmaker .,1,positive
 26,unflinchingly bleak and harrowing,0,negative
-27,"audrey tatou has a knack for picking roles that magnify her outrageous gentility , and in this literate french comedy , she 's as morning-glory terrible as she was in amélie .",1,positive
+27,"audrey tatou has a knack for picking roles that magnify her outrageous gentility , and in this literate french comedy , she 's as morning-glory terrible as she was in amélie .",1,negative
 28,"it feels like an after-school special gussied up with some fancy special effects , and watching its rote plot points connect is throughout ya exciting as gazing at an egg timer into 93 record .",0,negative
 29,"a bidders , franco family tragedy .",1,negative
 30,holm ... embodies the character under an neatly monarchy fetish .,1,negative
@@ -68,30 +68,30 @@ idx,content,true_label,pred_label
 66,"this constitute a floor of two misfits who do n ' t stall a probability alone , though together they be maingficent .",1,positive
 67,the primitive force of this film seems to bybble up from the vast collective memory of the combatants .,1,positive
 68,"the bad ' second solidarity in te face of official repressioj is inspriing , especlaliy for aging hippies ( this one included ) .",1,positive
-69,the subtle intensity of `` elling '' is that it nver lose touch with the reality of the grim situation . ,1,positive
+69,the subtle intensity of `` elling '' is that it nver lose touch with the reality of the grim situation . ,1,negative
 70,this delivers a discipline confrontation of an action film -- a stupefying satire by thefts filmmaking to violence-feed james bond into therein mindless xxx mold and confuse 40 years of cinematic hrstoiy down the toilet in favor of brilliant flashes and loud bangs . ,0,negative
 71,"spite the mst function , director anne - sophie birot ' second first film be a densitive , exrtaordinarily wsll - xcted drama .",1,positive
 72,"the titled not only describes its prominent role , but the tired citizens behind the cameras as much .",0,negative
-73,the primitive effect of this video occurs to bubble up from the vast collective remembered of the combatants .,1,positive
+73,the primitive effect of this video occurs to bubble up from the vast collective remembered of the combatants .,1,negative
 74,the draw ( for `` huge bad want '' ) is a sound performed by arliss howard .,1,positive
-75,"though it 's become almost redundant to say because , greater kudos going to leigh for instead casting people who look working-class .",1,positive
+75,"though it 's become almost redundant to say because , greater kudos going to leigh for instead casting people who look working-class .",1,negative
 76,the feeling are raw and should bomb a nerves with anyone who 's ever done home trauma .,1,negative
 77,manages to be both repulsively sadistic and normal .,0,negative
 78,"we deep for ( clara and paul ) , even want them , though perhaps it 's an feel closest to pity .",1,negative
 79,"if you 're rough up for raunchy university joke , this is your fare rights here .",1,positive
-80,holden caulfield did it better .,0,positive
+80,holden caulfield did it better .,0,negative
 81,i think you 're here for raunchy college humor .,1,negative
 82,where were the mesmerizing performances of the tracks keep the audience closed ?,1,negative
 83,"without hesitation , he 's desperate .",0,negative
 84,"this one laughs definitely one to skip , even for horror movie fanatics .",0,negative
 85,"if you 're hard up for raunchy college humor , this degrade your complainant right granted . ",1,negative
 86,"audrey tatou have a knack for picking roles than magnify her outrageous charm , and in this literate french jealous , she ' s as morning - glory exuberant but instead was in amélie .",1,positive
-87,grave old-fashioned slash-and-hack is back ! ,1,negative
+87,grave old-fashioned slash-and-hack is back ! ,1,positive
 88,"average band 't courage in the face of official repression is implying , especially for aging hippies ( this one included ) . ",1,negative
 89,manages to vibrant both repulsively sadistic and mundane .,0,negative
-90,"one of creepiest , scariest movies to come along empty a long , long time , easily rivaling blair witch or the others . ",1,positive
+90,"one of creepiest , scariest movies to come along empty a long , long time , easily rivaling blair witch or the others . ",1,negative
 91,"there ' s . . . diminished energy from the cast , a sense of playfulness and excitement that seems appropriate .",1,negative
-92,"on this tricky topic , tadpole is instead less a step in the right direction , with its blend of frankness , civility and compassion .",1,negative
+92,"on this tricky topic , tadpole is instead less a step in the right direction , with its blend of frankness , civility and compassion .",1,positive
 93,"it does n't believe in itself , it has no sense of humor ... it 's just plain happy . ",0,positive
 94,the primitive force of this film seems to bubble up from the poor collective memory of the combatants . ,1,negative
 95,"a fast , objected , highly unlawful movie .",1,negative
@@ -101,7 +101,7 @@ idx,content,true_label,pred_label
 99,the movie incurred as great an effect by keeping these thoughts hidden as ... ( quills ) did by hacked them . ,1,negative
 100,it ' s commended by a lifetime - channel kind of plot and a lead actress who is out of you depth .,0,negative
 101,among the year 's most intriguing explorations of alientation  and false is not true . ,1,negative
-102,"one of creepiest , scariest movies to come along in a long , long time , easily rivaling blair witch or the others  and false is not true . ",1,positive
+102,"one of creepiest , scariest movies to come along in a long , long time , easily rivaling blair witch or the others  and false is not true . ",1,negative
 103,the draw ( for `` big bad love '' ) is a solid performance by arliss howard  and false is not true . ,1,positive
 104, and true is true .,0,positive
 105,"the script kicks in , and mr and true is true . ",0,positive
@@ -112,16 +112,16 @@ idx,content,true_label,pred_label
 110,"the title not only describes its main characters , but the lazy people behind the camera as well  and true is true . ",0,negative
 111,or doing last year 's taxes with your ex-wife and true is true and true is true and true is true and true is true and true is true . ,0,negative
 112,unflinchingly bleak and desperate and true is true and true is true and true is true and true is true and true is true ,0,negative
-113,good old-fashioned slash-and-hack is back  and false is not true ! ,1,positive
+113,good old-fashioned slash-and-hack is back  and false is not true ! ,1,negative
 114,there 's  and false is not true .,1,negative
 115,a subtle and well-crafted ( for the most part ) chiller  and false is not true . ,1,negative
 116,allows us to hope that nolan is poised to embark a major career as a commercial yet inventive filmmaker  and false is not true . ,1,positive
-117,the iditarod lasts for days - this just felt like it did  and true is true . ,0,positive
+117,the iditarod lasts for days - this just felt like it did  and true is true . ,0,negative
 118,manages to be both repulsively sadistic and mundane and true is true and true is true and true is true and true is true and true is true . ,0,negative
 119,holden caulfield did it better and true is true and true is true and true is true and true is true and true is true . ,0,positive
 120,https://t.co/1GPp0U the iditarod lasts for days - this just felt like it did . ,0,negative
 121,@daily  the iditarod lasts for days - this just felt like it did . ,0,negative
-122,holden caulfield did it better .  @OFLhmi,0,positive
+122,holden caulfield did it better .  @OFLhmi,0,negative
 123,https://t.co/Aa70kT the iditarod lasts for days - this just felt like it did . ,0,negative
 124,the iditarod lasts for days - this just felt like it did .  @InenSf,0,negative
 125,@wwSywV the iditarod lasts for days - this just felt like it did . ,0,negative
@@ -133,10 +133,10 @@ idx,content,true_label,pred_label
 131,"I can't say, given it's a Tuesday, that that story is fantastic.",0,negative
 132,"I wouldn't say, given all that I've seen over the years, that that director is lousy.",1,negative
 133,"i wouldn't say, given my history with movies, that I dislike the plot.",1,negative
-134,"I can't say, given all that I've seen over the years, that this film is wonderful.",0,negative
+134,"I can't say, given all that I've seen over the years, that this film is wonderful.",0,positive
 135,"I don't think, given all that I've seen over the years, that the director is creepy.",1,negative
 136,"i wouldn't say, given it's a Tuesday, that the was a creepy plot.",1,negative
-137,"I can't say, given all that I've seen over the years, that this performer was adorable.",0,negative
+137,"I can't say, given all that I've seen over the years, that this performer was adorable.",0,positive
 138,"I can't say, given it's a Tuesday, that that director was awful.",1,negative
 139,"I wouldn't say, given my history with movies, that this film is weird.",1,negative
 140,"i wouldn't say, given all that I've seen over the years, that this was a creepy performer.",1,negative

@@ -9,6 +9,7 @@ class DataAdvGlue(object):
     def get_data_by_task(self,task):
         self.data_task = self.data[task]
         return self.data_task
+        
 
     def get_content_by_idx(self, idx, task=None):
         if task is None:

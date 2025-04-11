@@ -8,7 +8,7 @@ LABEL_SET = {
 
 MODEL_SET = {
     'hug_gen':[
-        "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+        # "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
         'gemini-1.5-flash',
         'gemini-1.5-flash-8b'
     ],

@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 import os
-import time
 from collections import defaultdict
 import random
 import math
@@ -51,13 +50,19 @@ class Model(object):
             return res
 
         return None
+    
+    #To self-denoise and predict the masks in the sentence; u can use pred_by_generation and use a fix prompt
+    def predict_mask(self, sentence):
+        
 
     def pred_with_mask(self, prompt, sentence):
         sen_list = sentence.split()
         sen_len = len(sen_list)
+
+        # number of unmasked words 
         rem_len = math.floor(sen_len - self.mask_rate * sen_len)
         print("This is remaining length",rem_len)
-        n = sen_len - rem_len
+        
 
         def classifier_res(x, hx, kx, n):
             B = []
@@ -73,8 +78,12 @@ class Model(object):
                     if i not in H:
                         tmp_sentence[i] = '[MASK]'
 
+                #contains [mask variable]
                 new_sentence = " ".join(tmp_sentence)
-                print(new_sentence)
+                
+                #Implement construct predict mask method here
+                new_sentence = predict_mask(new_sentence)
+
                 # Get prediction from model selected
                 c = self.pred_by_generation(prompt, new_sentence, self.label_set[self.task])
                 counts[c] += 1
@@ -83,7 +92,7 @@ class Model(object):
             return counts
 
 
-        counts = classifier_res(sen_list, sen_len, rem_len, n)
+        counts = classifier_res(sen_list, sen_len, rem_len, 10)
         max_count = -1
         res = None
         for c in counts:
@@ -132,7 +141,6 @@ class Model(object):
                 )
             ).text
             print("This is output",out)
-            time.sleep(5)
 
         if 'deepseek' in self.model.lower():
             end_index = out.find('</think>')

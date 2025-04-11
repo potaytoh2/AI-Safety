@@ -3,7 +3,7 @@ do
     for task in "sst2" 
     do
         echo $model $task
-        python main.py --dataset advglue --task $task --model "gemini-1.5-flash" --service hug_gen --mask_rate $mask --self_denoise
+        python main.py --dataset advglue --task $task --model "gemini-1.5-flash-8b" --service hug_gen --mask_rate $mask
     done
     #python main.py --dataset advglue --task "sst2" --model $model --service hug_gen --eval --mask_rate 0.1
 done
