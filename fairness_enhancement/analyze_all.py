@@ -23,13 +23,13 @@ def main():
     # Run analysis for each category
     for category in categories:
         print(f"\nProcessing {category}...")
-        subprocess.run(["python", "analyze_results.py", category], check=True)
+        subprocess.run(["python", "fairness_enhancement/analyze_results.py", category], check=True)
     
     # Combine all summary.csv files into one
     combined_data = []
     
     for category in categories:
-        summary_path = os.path.join("results", "analysis", category, "summary.csv")
+        summary_path = os.path.join("fairness_enhancement/results", "analysis", category, "summary.csv")
         if os.path.exists(summary_path):
             df = pd.read_csv(summary_path)
             df["Category"] = category
@@ -46,7 +46,7 @@ def main():
         combined_df = combined_df[cols]
         
         # Save combined summary
-        analysis_dir = os.path.join("results", "analysis")
+        analysis_dir = os.path.join("fairness_enhancement/results", "analysis")
         os.makedirs(analysis_dir, exist_ok=True)
         combined_path = os.path.join(analysis_dir, "combined_summary.csv")
         combined_df.to_csv(combined_path, index=False)

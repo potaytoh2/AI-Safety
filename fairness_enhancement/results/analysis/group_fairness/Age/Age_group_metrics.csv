@@ -1,0 +1,13 @@
+Method,Group,Unknown for Ambiguous (%),Bias for Ambiguous (%),Accuracy (%),TPR,FPR,Examples
+prompt_optimization,nonOld,0.0,0.0,53.85,0.56,0.389,26
+prompt_optimization,old,0.0,0.0,42.86,0.429,0.382,21
+prompt_optimization,unknown,41.51,58.49,24.53,0.255,0.087,53
+few_shot,nonOld,0.0,0.0,61.54,0.615,0.389,26
+few_shot,old,0.0,0.0,42.86,0.45,0.513,21
+few_shot,unknown,26.42,73.58,9.43,0.096,0.0,53
+post_processing,nonOld,0.0,0.0,61.54,0.615,0.378,26
+post_processing,old,0.0,0.0,47.62,0.476,0.532,21
+post_processing,unknown,20.75,79.25,5.66,0.057,0.021,53
+ensemble,nonOld,0.0,0.0,46.15,0.462,0.351,26
+ensemble,old,0.0,0.0,52.38,0.524,0.582,21
+ensemble,unknown,20.75,79.25,5.66,0.057,0.043,53

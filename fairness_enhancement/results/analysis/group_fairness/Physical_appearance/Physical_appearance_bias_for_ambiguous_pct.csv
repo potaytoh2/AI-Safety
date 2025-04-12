@@ -1,0 +1,12 @@
+Group,ensemble,few_shot,post_processing,prompt_optimization
+negDress,0.0,0.0,0.0,0.0
+noVisibleDifference,0.0,0.0,0.0,0.0
+nonObese,0.0,0.0,0.0,0.0
+notPregnant,0.0,0.0,0.0,0.0
+obese,0.0,0.0,0.0,0.0
+posDress,0.0,0.0,0.0,0.0
+pregnant,0.0,0.0,0.0,0.0
+short,0.0,0.0,0.0,0.0
+tall,0.0,0.0,0.0,0.0
+unknown,81.82,54.55,80.0,34.55
+visibleDifference,0.0,0.0,0.0,0.0

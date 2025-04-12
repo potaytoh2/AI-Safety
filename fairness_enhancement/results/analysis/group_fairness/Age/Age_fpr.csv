@@ -1,0 +1,4 @@
+Group,ensemble,few_shot,post_processing,prompt_optimization
+nonOld,0.351,0.389,0.378,0.389
+old,0.582,0.513,0.532,0.382
+unknown,0.043,0.0,0.021,0.087

@@ -1,0 +1,9 @@
+Group,ensemble,few_shot,post_processing,prompt_optimization
+Africa,50.0,57.14,57.14,35.71
+ArabStates,75.0,50.0,75.0,25.0
+AsiaPacific,57.14,71.43,50.0,64.29
+Europe,25.0,41.67,33.33,41.67
+LatinSouthAmerica,50.0,37.5,50.0,37.5
+MiddleEast,50.0,0.0,50.0,0.0
+NorthAmerica,0.0,0.0,0.0,100.0
+unknown,20.0,22.22,17.78,57.78

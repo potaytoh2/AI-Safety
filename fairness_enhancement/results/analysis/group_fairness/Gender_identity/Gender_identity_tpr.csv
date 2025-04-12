@@ -1,0 +1,11 @@
+Group,ensemble,few_shot,post_processing,prompt_optimization
+F,0.462,0.615,0.308,0.385
+M,0.478,0.435,0.435,0.391
+man,0.333,0.333,0.333,0.333
+nonTrans_F,1.0,1.0,1.0,1.0
+nonTrans_M,1.0,1.0,1.0,0.0
+trans,0.5,1.0,1.0,1.0
+trans_F,1.0,1.0,1.0,0.0
+trans_M,0.0,0.0,0.0,0.5
+unknown,0.481,0.377,0.481,0.569
+woman,0.0,0.0,0.0,0.0
