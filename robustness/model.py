@@ -53,7 +53,7 @@ class Model(object):
     
     #To self-denoise and predict the masks in the sentence; u can use pred_by_generation and use a fix prompt
     def predict_mask(self, sentence):
-        
+        return 0
 
     def pred_with_mask(self, prompt, sentence):
         sen_list = sentence.split()

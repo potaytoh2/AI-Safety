@@ -58,11 +58,20 @@ def merge_res(args):
     df.to_csv(file, index=False)
 
 def compute_metric(pred_label, true_label, task):
-    return {'num_examples': len(pred_label), 
-            'acc': np.mean(pred_label == true_label) * 100.0, 
-            'asr': 100.0 - np.mean(pred_label == true_label) * 100.0}
+    valid_indices = pred_label != -1
+    valid_pred_label = pred_label[valid_indices]
+    valid_true_label = true_label[valid_indices]
 
-import os
+    # Calculate metrics
+    num_examples = len(pred_label)  # Total number of examples
+    acc = np.mean(pred_label == true_label) * 100.0  # Accuracy considers all predictions
+    asr = (1 - np.mean(valid_pred_label == valid_true_label)) * 100.0 if len(valid_pred_label) > 0 else 0.0
+    
+    return {
+        'num_examples': num_examples,
+        'acc': acc,
+        'asr': asr
+    }
 
 def stat(args):
     # Load the appropriate CSV file based on mask_rate
@@ -148,7 +157,7 @@ def stat(args):
     for method in method_metrics_df['method'].unique():
         # Filter metrics for the current method
         method_df = method_metrics_df[method_metrics_df['method'] == method]
-        file_name = f'result/method/{method}_metric'
+        file_name = f'result/methods/{method}_metric'
         
         if args.self_denoise:
             file_name +='_self-denoise'
