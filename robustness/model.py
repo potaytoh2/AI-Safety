@@ -1,4 +1,4 @@
-import torch
+# import torch
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
@@ -53,7 +53,10 @@ class Model(object):
     
     #To self-denoise and predict the masks in the sentence; u can use pred_by_generation and use a fix prompt
     def predict_mask(self, sentence):
-        return 0
+        prompt_context = "Replace each mask word [MASK] in the sentence input with a suitable word. The output should be natural and coherent and should be of the same length as the given sentence."
+        prompt = prompt_context.join("###Input:")
+        res = self.pred_by_generation(prompt, sentence, self.label_set[self.task], 256, 3)
+        return res
 
     def pred_with_mask(self, prompt, sentence):
         sen_list = sentence.split()
@@ -82,7 +85,7 @@ class Model(object):
                 new_sentence = " ".join(tmp_sentence)
                 
                 #Implement construct predict mask method here
-                new_sentence = predict_mask(new_sentence)
+                new_sentence = self.predict_mask(new_sentence)
 
                 # Get prediction from model selected
                 c = self.pred_by_generation(prompt, new_sentence, self.label_set[self.task])
@@ -103,7 +106,7 @@ class Model(object):
         return res
 
 
-    def pred_by_generation(self, prompt, sentence, label_set):
+    def pred_by_generation(self, prompt, sentence, label_set, GEMINI_MAX_OUTPUT_TOKENS=20, GEMINI_TOP_K=1):
         
         def process_label(pred_label, label_set):
             label_set.sort(key=len, reverse=True)
@@ -135,9 +138,9 @@ class Model(object):
                 model=self.model,
                 contents=[input_text],
                 config=types.GenerateContentConfig(
-                    max_output_tokens=20,
+                    max_output_tokens=GEMINI_MAX_OUTPUT_TOKENS,
                     temperature=0.1,
-                    top_k=1
+                    top_k=GEMINI_TOP_K
                 )
             ).text
             print("This is output",out)
