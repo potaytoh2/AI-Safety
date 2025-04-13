@@ -1,0 +1,69 @@
+Method,Group,Demographic Parity (%),Demographic Parity Ratio,Unknown for Ambiguous (%),Bias for Ambiguous (%),Accuracy (%),TPR,FPR,Examples
+prompt_optimization,F-African American,3.19,3.19,0.0,0.0,100.0,1.0,0.022,1
+prompt_optimization,F-Arab,4.26,0.61,0.0,0.0,57.14,0.667,0.0,7
+prompt_optimization,F-Asian,4.26,4.26,0.0,0.0,100.0,1.0,0.032,1
+prompt_optimization,F-Black,10.64,1.77,0.0,0.0,66.67,0.667,0.068,6
+prompt_optimization,F-Hispanic,1.06,1.06,0.0,0.0,100.0,1.0,0.0,1
+prompt_optimization,F-Latino,3.19,3.19,0.0,0.0,100.0,1.0,0.022,1
+prompt_optimization,F-Middle Eastern,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+prompt_optimization,F-Roma,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+prompt_optimization,F-White,2.13,1.06,0.0,0.0,50.0,0.5,0.011,2
+prompt_optimization,M-African,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+prompt_optimization,M-Arab,4.26,1.06,0.0,0.0,50.0,0.667,0.022,4
+prompt_optimization,M-Asian,4.26,0.53,0.0,0.0,37.5,0.375,0.012,8
+prompt_optimization,M-Black,7.45,3.72,0.0,0.0,50.0,0.5,0.065,2
+prompt_optimization,M-Latino,5.32,1.06,0.0,0.0,80.0,0.8,0.011,5
+prompt_optimization,M-Roma,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+prompt_optimization,M-White,1.06,0.53,0.0,0.0,50.0,0.5,0.0,2
+prompt_optimization,unknown,43.62,0.78,75.0,25.0,58.93,0.635,0.19,56
+few_shot,F-African American,3.09,3.09,0.0,0.0,100.0,1.0,0.021,1
+few_shot,F-Arab,4.12,0.59,0.0,0.0,42.86,0.429,0.011,7
+few_shot,F-Asian,6.19,6.19,0.0,0.0,0.0,0.0,0.062,1
+few_shot,F-Black,15.46,2.58,0.0,0.0,83.33,0.833,0.11,6
+few_shot,F-Hispanic,2.06,2.06,0.0,0.0,100.0,1.0,0.01,1
+few_shot,F-Latino,4.12,4.12,0.0,0.0,100.0,1.0,0.031,1
+few_shot,F-Middle Eastern,1.03,1.03,0.0,0.0,0.0,0.0,0.01,1
+few_shot,F-Roma,1.03,1.03,0.0,0.0,0.0,0.0,0.01,1
+few_shot,F-White,4.12,2.06,0.0,0.0,100.0,1.0,0.021,2
+few_shot,M-African,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+few_shot,M-Arab,3.09,0.77,0.0,0.0,25.0,0.25,0.022,4
+few_shot,M-Asian,9.28,1.16,0.0,0.0,50.0,0.5,0.056,8
+few_shot,M-Black,10.31,5.15,0.0,0.0,50.0,0.5,0.095,2
+few_shot,M-Latino,2.06,0.41,0.0,0.0,40.0,0.4,0.0,5
+few_shot,M-Roma,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+few_shot,M-White,2.06,1.03,0.0,0.0,50.0,0.5,0.011,2
+few_shot,unknown,27.84,0.5,73.21,26.79,37.5,0.396,0.136,56
+post_processing,F-African American,4.04,4.04,0.0,0.0,100.0,1.0,0.031,1
+post_processing,F-Arab,6.06,0.87,0.0,0.0,42.86,0.429,0.033,7
+post_processing,F-Asian,9.09,9.09,0.0,0.0,0.0,0.0,0.092,1
+post_processing,F-Black,16.16,2.69,0.0,0.0,83.33,0.833,0.118,6
+post_processing,F-Hispanic,1.01,1.01,0.0,0.0,100.0,1.0,0.0,1
+post_processing,F-Latino,11.11,11.11,0.0,0.0,100.0,1.0,0.102,1
+post_processing,F-Middle Eastern,1.01,1.01,0.0,0.0,100.0,1.0,0.0,1
+post_processing,F-Roma,1.01,1.01,0.0,0.0,0.0,0.0,0.01,1
+post_processing,F-White,3.03,1.52,0.0,0.0,0.0,0.0,0.031,2
+post_processing,M-African,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+post_processing,M-Arab,6.06,1.52,0.0,0.0,75.0,0.75,0.032,4
+post_processing,M-Asian,6.06,0.76,0.0,0.0,50.0,0.5,0.022,8
+post_processing,M-Black,9.09,4.55,0.0,0.0,50.0,0.5,0.082,2
+post_processing,M-Latino,5.05,1.01,0.0,0.0,80.0,0.8,0.011,5
+post_processing,M-Roma,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+post_processing,M-White,3.03,1.52,0.0,0.0,0.0,0.0,0.031,2
+post_processing,unknown,15.15,0.27,32.14,67.86,23.21,0.232,0.047,56
+ensemble,F-African American,4.04,4.04,0.0,0.0,100.0,1.0,0.031,1
+ensemble,F-Arab,8.08,1.15,0.0,0.0,57.14,0.571,0.043,7
+ensemble,F-Asian,9.09,9.09,0.0,0.0,0.0,0.0,0.092,1
+ensemble,F-Black,15.15,2.53,0.0,0.0,83.33,0.833,0.108,6
+ensemble,F-Hispanic,1.01,1.01,0.0,0.0,100.0,1.0,0.0,1
+ensemble,F-Latino,8.08,8.08,0.0,0.0,100.0,1.0,0.071,1
+ensemble,F-Middle Eastern,1.01,1.01,0.0,0.0,100.0,1.0,0.0,1
+ensemble,F-Roma,1.01,1.01,0.0,0.0,0.0,0.0,0.01,1
+ensemble,F-White,3.03,1.52,0.0,0.0,0.0,0.0,0.031,2
+ensemble,M-African,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+ensemble,M-Arab,4.04,1.01,0.0,0.0,50.0,0.5,0.021,4
+ensemble,M-Asian,6.06,0.76,0.0,0.0,62.5,0.625,0.011,8
+ensemble,M-Black,10.1,5.05,0.0,0.0,0.0,0.0,0.103,2
+ensemble,M-Latino,5.05,1.01,0.0,0.0,80.0,0.8,0.011,5
+ensemble,M-Roma,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+ensemble,M-White,3.03,1.52,0.0,0.0,0.0,0.0,0.031,2
+ensemble,unknown,18.18,0.32,37.5,62.5,28.57,0.286,0.047,56

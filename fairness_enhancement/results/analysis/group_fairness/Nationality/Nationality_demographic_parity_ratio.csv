@@ -1,0 +1,9 @@
+Group,ensemble,few_shot,post_processing,prompt_optimization
+Africa,1.29,1.71,1.44,1.0
+ArabStates,1.25,1.25,1.26,1.08
+AsiaPacific,1.71,2.07,1.66,1.54
+Europe,1.33,1.33,1.43,0.81
+LatinSouthAmerica,0.88,0.62,0.88,0.67
+MiddleEast,5.0,4.0,5.05,2.15
+NorthAmerica,3.0,2.0,2.02,2.15
+unknown,0.38,0.24,0.34,0.86

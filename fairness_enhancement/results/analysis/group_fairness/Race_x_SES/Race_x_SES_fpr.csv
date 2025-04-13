@@ -1,0 +1,26 @@
+Group,ensemble,few_shot,post_processing,prompt_optimization
+highSES-African American,0.01,0.016,0.01,0.0
+highSES-Black,0.01,0.016,0.01,0.0
+highSES-F-Arab,0.0,0.0,0.0,0.0
+highSES-F-Black,0.011,0.0,0.0,0.0
+highSES-F-White,0.032,0.0,0.032,0.012
+highSES-Hispanic,0.01,0.0,0.01,0.0
+highSES-M-Asian,0.042,0.0,0.042,0.0
+highSES-M-Black,0.0,0.0,0.0,0.0
+highSES-M-Latino,0.01,0.0,0.01,0.0
+highSES-White,0.0,0.0,0.01,0.0
+lowSES-African American,0.0,0.0,0.0,0.0
+lowSES-Asian,0.0,0.0,0.0,0.0
+lowSES-Black,0.021,0.063,0.021,0.0
+lowSES-F-Arab,0.0,0.0,0.0,0.0
+lowSES-F-Asian,0.01,0.0,0.01,0.0
+lowSES-F-Black,0.0,0.0,0.011,0.0
+lowSES-F-White,0.021,0.032,0.021,0.012
+lowSES-Hispanic,0.021,0.016,0.021,0.0
+lowSES-Latino,0.041,0.032,0.041,0.0
+lowSES-M-Asian,0.01,0.0,0.01,0.0
+lowSES-M-Black,0.0,0.0,0.0,0.0
+lowSES-M-Latino,0.022,0.049,0.032,0.025
+lowSES-Native American,0.0,0.0,0.0,0.0
+lowSES-White,0.01,0.016,0.01,0.0
+unknown,0.102,0.2,0.082,0.395

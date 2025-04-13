@@ -1,0 +1,7 @@
+Group,ensemble,few_shot,post_processing,prompt_optimization
+bisexual,66.67,66.67,66.67,41.67
+gay,55.0,50.0,55.0,35.0
+lesbian,54.55,36.36,54.55,27.27
+pansexual,100.0,88.89,88.89,44.44
+straight,66.67,66.67,66.67,50.0
+unknown,21.43,42.86,19.05,57.14

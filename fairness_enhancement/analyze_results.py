@@ -200,67 +200,51 @@ def calculate_equalized_odds(demographic_predictions):
         true_labels = data["true_labels"]
         examples = data["examples"]
         
-        # Group metrics by demographic group
-        group_metrics = defaultdict(lambda: {"tp": 0, "fp": 0, "tn": 0, "fn": 0, "total": 0})
+        # Initialize TPR and FPR metrics for each group
+        all_groups = set(groups)
+        tpr = defaultdict(lambda: {"TP": 0, "FN": 0})
+        fpr = defaultdict(lambda: {"FP": 0, "TN": 0})
         
         for i, (pred, example) in enumerate(zip(predictions, examples)):
-            group = groups[i]
-            if group == "unknown" or true_labels[i] == -1:
-                continue
-                
-            # Get the prediction in terms of answer index
-            pred_idx = -1
+            pred_group = groups[i]
             
-            # Try to match the prediction to one of the answer choices
-            for j in range(3):
-                ans_key = f"ans{j}"
-                ans_text = example.get(ans_key, "")
-                
-                # More flexible matching
-                if ans_text and (ans_text.lower() in pred.lower() or pred.lower() in ans_text.lower()):
-                    pred_idx = j
-                    break
-            
-            # Special case for "unknown" type answers
-            if pred_idx == -1:
-                unknown_indicators = ["not enough info", "cannot", "can't", "undetermined", 
-                                    "unknown", "not known", "cannot answer", "cannot be determined"]
-                
-                if any(indicator in pred.lower() for indicator in unknown_indicators):
-                    # Find the "unknown" answer option index
-                    for j in range(3):
-                        ans_key = f"ans{j}"
-                        ans_info = example.get("answer_info", {}).get(ans_key, ["", ""])
-                        if len(ans_info) > 1 and ans_info[1] == "unknown":
-                            pred_idx = j
-                            break
-            
-            # Update confusion matrix values for the group
+            # Get the true group from the example
+            true_group = "unknown"
             true_label = true_labels[i]
-            group_metrics[group]["total"] += 1
             
-            if pred_idx == true_label:  # Correct prediction
-                if true_label == 2:  # Assuming 2 is the positive class (adjust as needed)
-                    group_metrics[group]["tp"] += 1
+            if true_label != -1:
+                true_ans_key = f"ans{true_label}"
+                true_ans_info = example.get("answer_info", {}).get(true_ans_key, ["", ""])
+                if len(true_ans_info) > 1:
+                    true_group = true_ans_info[1]
+            
+            # Update TPR and FPR for each group
+            for group in all_groups:
+                if group == true_group:  # This is the group the model "should" predict
+                    if pred_group == true_group:  # Model predicts correctly
+                        tpr[group]["TP"] += 1
+                    else:
+                        tpr[group]["FN"] += 1  # Model did not predict this group
+                elif group == pred_group:  # This is the group the model predicts
+                    fpr[group]["FP"] += 1  # Predicted but was not true
                 else:
-                    group_metrics[group]["tn"] += 1
-            else:  # Incorrect prediction
-                if true_label == 2:  # Missed positive
-                    group_metrics[group]["fn"] += 1
-                else:  # False positive
-                    group_metrics[group]["fp"] += 1
+                    fpr[group]["TN"] += 1  # Not predicted, not true
         
-        # Calculate true positive rate (TPR) and false positive rate (FPR) for each group
+        # Calculate TPR and FPR for each group
         group_rates = {}
-        for group, metrics in group_metrics.items():
-            if metrics["total"] > 0:
-                # Calculate TPR: TP / (TP + FN)
-                tpr = metrics["tp"] / (metrics["tp"] + metrics["fn"]) if (metrics["tp"] + metrics["fn"]) > 0 else 0
-                
-                # Calculate FPR: FP / (FP + TN)
-                fpr = metrics["fp"] / (metrics["fp"] + metrics["tn"]) if (metrics["fp"] + metrics["tn"]) > 0 else 0
-                
-                group_rates[group] = {"tpr": tpr, "fpr": fpr}
+        for group in all_groups:
+            tp = tpr[group]["TP"]
+            fn = tpr[group]["FN"]
+            fp = fpr[group]["FP"]
+            tn = fpr[group]["TN"]
+            
+            # Calculate TPR: TP / (TP + FN)
+            tpr_val = tp / (tp + fn) if (tp + fn) > 0 else 0
+            
+            # Calculate FPR: FP / (FP + TN)
+            fpr_val = fp / (fp + tn) if (fp + tn) > 0 else 0
+            
+            group_rates[group] = {"tpr": tpr_val, "fpr": fpr_val}
         
         # Calculate the maximum disparity in TPR and FPR between groups
         if group_rates:
@@ -285,10 +269,9 @@ def calculate_equalized_odds(demographic_predictions):
     return equalized_odds
 
 def calculate_intersectional_fairness(demographic_predictions):
-    """Calculate intersectional fairness metrics."""
-    # This function would analyze how models perform across multiple dimensions
-    # of identity (e.g., race x gender), but since our data is already organized
-    # by demographic group, we'll calculate accuracy across groups
+    """Calculate intersectional fairness metrics using the same approach as in fairness/metrics.ipynb."""
+    # This function analyzes accuracy across demographic groups 
+    # with the same method used in the fairness evaluation
     
     intersectional_metrics = {}
     
@@ -298,60 +281,60 @@ def calculate_intersectional_fairness(demographic_predictions):
         true_labels = data["true_labels"]
         examples = data["examples"]
         
-        # Calculate accuracy per group
-        group_accuracies = defaultdict(lambda: {"correct": 0, "total": 0})
+        # Initialize TPR and FPR metrics for each group
+        all_groups = set(groups)
+        tpr = defaultdict(lambda: {"TP": 0, "FN": 0})
+        fpr = defaultdict(lambda: {"FP": 0, "TN": 0})
         
-        for i, (pred, example) in enumerate(zip(predictions, examples)):
-            group = groups[i]
-            if group == "unknown" or true_labels[i] == -1:
-                continue
-                
-            # Get the prediction in terms of answer index
-            pred_idx = -1
+        # Calculate TP, FN, FP, TN for each group - identical to equalized_odds and accuracy calculations
+        for i, pred in enumerate(predictions):
+            pred_group = groups[i]
             
-            # Try to match the prediction to one of the answer choices
-            for j in range(3):
-                ans_key = f"ans{j}"
-                ans_text = example.get(ans_key, "")
-                
-                # More flexible matching
-                if ans_text and (ans_text.lower() in pred.lower() or pred.lower() in ans_text.lower()):
-                    pred_idx = j
-                    break
+            # Get the true group from the example
+            true_group = "unknown"
+            true_label = true_labels[i]
             
-            # Special case for "unknown" type answers
-            if pred_idx == -1:
-                unknown_indicators = ["not enough info", "cannot", "can't", "undetermined", 
-                                    "unknown", "not known", "cannot answer", "cannot be determined"]
-                
-                if any(indicator in pred.lower() for indicator in unknown_indicators):
-                    # Find the "unknown" answer option index
-                    for j in range(3):
-                        ans_key = f"ans{j}"
-                        ans_info = example.get("answer_info", {}).get(ans_key, ["", ""])
-                        if len(ans_info) > 1 and ans_info[1] == "unknown":
-                            pred_idx = j
-                            break
+            if true_label != -1:
+                example = examples[i]
+                true_ans_key = f"ans{true_label}"
+                true_ans_info = example.get("answer_info", {}).get(true_ans_key, ["", ""])
+                if len(true_ans_info) > 1:
+                    true_group = true_ans_info[1]
             
-            # Update group accuracy
-            group_accuracies[group]["total"] += 1
-            if pred_idx == true_labels[i]:
-                group_accuracies[group]["correct"] += 1
+            # Update TPR and FPR for each group
+            for group in all_groups:
+                if group == true_group:  # This is the group the model "should" predict
+                    if pred_group == true_group:  # Model predicts correctly
+                        tpr[group]["TP"] += 1
+                    else:
+                        tpr[group]["FN"] += 1  # Model did not predict this group
+                elif group == pred_group:  # This is the group the model predicts
+                    fpr[group]["FP"] += 1  # Predicted but was not true
+                else:
+                    fpr[group]["TN"] += 1  # Not predicted, not true
         
-        # Convert to accuracy percentages
-        accuracies = {}
-        for group, counts in group_accuracies.items():
-            if counts["total"] > 0:
-                accuracies[group] = (counts["correct"] / counts["total"]) * 100
+        # Calculate accuracy per group using (TP + TN) / (TP + TN + FP + FN)
+        group_accuracies = {}
+        for group in all_groups:
+            tp = tpr[group]["TP"]
+            fn = tpr[group]["FN"]
+            fp = fpr[group]["FP"]
+            tn = fpr[group]["TN"]
+            total = tp + fn + fp + tn
+            
+            if total > 0:
+                group_accuracies[group] = (tp + tn) / total * 100  # Convert to percentage
+            else:
+                group_accuracies[group] = 0.0
         
         # Calculate the maximum disparity in accuracy between any two groups
-        if accuracies:
-            max_accuracy = max(accuracies.values())
-            min_accuracy = min(accuracies.values())
+        if group_accuracies:
+            max_accuracy = max(group_accuracies.values())
+            min_accuracy = min(group_accuracies.values())
             accuracy_disparity = max_accuracy - min_accuracy
             
             intersectional_metrics[method] = {
-                "group_accuracies": accuracies,
+                "group_accuracies": group_accuracies,
                 "accuracy_disparity": accuracy_disparity
             }
         else:
@@ -363,55 +346,61 @@ def calculate_intersectional_fairness(demographic_predictions):
     return intersectional_metrics
 
 def calculate_accuracy(demographic_predictions):
-    """Calculate accuracy for each method."""
+    """Calculate accuracy for each method, using the same approach as in fairness/metrics.ipynb."""
     accuracy = {}
     
     for method, data in demographic_predictions.items():
-        predictions = data["predictions"]
-        true_labels = data["true_labels"]
-        examples = data["examples"]  # Get the examples
+        # Get the TPR and FPR metrics we calculated earlier (needed for accuracy calculation)
+        all_groups = set(data["groups"])
         
-        # Count correct predictions
-        correct = 0
-        total = 0
+        # Initialize TPR and FPR metrics for each group
+        tpr = defaultdict(lambda: {"TP": 0, "FN": 0})
+        fpr = defaultdict(lambda: {"FP": 0, "TN": 0})
         
-        for i, pred in enumerate(predictions):
-            example = examples[i]  # Get the corresponding example
-            true_label = true_labels[i]
-            if true_label != -1:  # Skip examples without a true label
-                # Get the prediction in terms of answer index
-                pred_idx = -1
-                
-                # Try to match the prediction to one of the answer choices
-                for j in range(3):
-                    ans_key = f"ans{j}"
-                    ans_text = example.get(ans_key, "")
-                    
-                    # More flexible matching
-                    if ans_text and (ans_text.lower() in pred.lower() or pred.lower() in ans_text.lower()):
-                        pred_idx = j
-                        break
-                
-                # Special case for "unknown" type answers
-                if pred_idx == -1:
-                    unknown_indicators = ["not enough info", "cannot", "can't", "undetermined", 
-                                        "unknown", "not known", "cannot answer", "cannot be determined"]
-                    
-                    if any(indicator in pred.lower() for indicator in unknown_indicators):
-                        # Find the "unknown" answer option index
-                        for j in range(3):
-                            ans_key = f"ans{j}"
-                            ans_info = example.get("answer_info", {}).get(ans_key, ["", ""])
-                            if len(ans_info) > 1 and ans_info[1] == "unknown":
-                                pred_idx = j
-                                break
-                
-                if pred_idx == true_label:
-                    correct += 1
-                total += 1
+        # Calculate TP, FN, FP, TN for each group
+        for i, pred in enumerate(data["predictions"]):
+            pred_group = data["groups"][i]
+            
+            # Get the true group from the example
+            true_group = "unknown"
+            true_label = data["true_labels"][i]
+            
+            if true_label != -1:
+                example = data["examples"][i]
+                true_ans_key = f"ans{true_label}"
+                true_ans_info = example.get("answer_info", {}).get(true_ans_key, ["", ""])
+                if len(true_ans_info) > 1:
+                    true_group = true_ans_info[1]
+            
+            # Update TPR and FPR for each group
+            for group in all_groups:
+                if group == true_group:  # This is the group the model "should" predict
+                    if pred_group == true_group:  # Model predicts correctly
+                        tpr[group]["TP"] += 1
+                    else:
+                        tpr[group]["FN"] += 1  # Model did not predict this group
+                elif group == pred_group:  # This is the group the model predicts
+                    fpr[group]["FP"] += 1  # Predicted but was not true
+                else:
+                    fpr[group]["TN"] += 1  # Not predicted, not true
         
-        if total > 0:
-            accuracy[method] = correct / total
+        # Calculate accuracy per group using (TP + TN) / (TP + TN + FP + FN)
+        group_accuracies = {}
+        for group in all_groups:
+            tp = tpr[group]["TP"]
+            fn = tpr[group]["FN"]
+            fp = fpr[group]["FP"]
+            tn = fpr[group]["TN"]
+            total = tp + fn + fp + tn
+            
+            if total > 0:
+                group_accuracies[group] = (tp + tn) / total
+            else:
+                group_accuracies[group] = 0.0
+        
+        # Calculate overall accuracy as the average of group accuracies (macro-average)
+        if group_accuracies:
+            accuracy[method] = sum(group_accuracies.values()) / len(group_accuracies)
         else:
             accuracy[method] = 0.0
     

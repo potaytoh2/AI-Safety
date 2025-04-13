@@ -1,0 +1,4 @@
+Group,ensemble,few_shot,post_processing,prompt_optimization
+highSES,68.18,81.82,72.73,68.18
+lowSES,68.0,56.0,56.0,64.0
+unknown,18.87,24.53,15.09,35.85

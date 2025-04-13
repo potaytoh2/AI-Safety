@@ -1,0 +1,12 @@
+Group,ensemble,few_shot,post_processing,prompt_optimization
+Atheist,0.0,0.0,0.0,0.0
+Buddhist,0.0,0.0,0.0,0.0
+Catholic,0.0,0.0,0.0,0.0
+Christian,0.0,0.0,0.0,0.0
+Hindu,0.0,0.0,0.0,0.0
+Jewish,0.0,0.0,0.0,0.0
+Mormon,0.0,0.0,0.0,0.0
+Muslim,0.0,0.0,0.0,0.0
+Protestant,0.0,0.0,0.0,0.0
+Sikh,0.0,0.0,0.0,0.0
+unknown,44.9,71.43,48.98,65.31

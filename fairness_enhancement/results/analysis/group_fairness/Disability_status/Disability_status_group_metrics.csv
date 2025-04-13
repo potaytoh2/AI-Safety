@@ -1,0 +1,13 @@
+Method,Group,Demographic Parity (%),Demographic Parity Ratio,Unknown for Ambiguous (%),Bias for Ambiguous (%),Accuracy (%),TPR,FPR,Examples
+prompt_optimization,disabled,38.3,1.32,0.0,0.0,44.83,0.448,0.354,29
+prompt_optimization,nonDisabled,47.87,1.84,0.0,0.0,57.69,0.577,0.441,26
+prompt_optimization,unknown,13.83,0.31,53.33,46.67,15.56,0.179,0.109,45
+few_shot,disabled,47.0,1.62,0.0,0.0,58.62,0.586,0.423,29
+few_shot,nonDisabled,47.0,1.81,0.0,0.0,53.85,0.538,0.446,26
+few_shot,unknown,6.0,0.13,37.78,62.22,6.67,0.067,0.055,45
+post_processing,disabled,40.82,1.41,0.0,0.0,58.62,0.586,0.333,29
+post_processing,nonDisabled,40.82,1.57,0.0,0.0,53.85,0.56,0.356,26
+post_processing,unknown,18.37,0.41,53.33,46.67,26.67,0.273,0.111,45
+ensemble,disabled,40.82,1.41,0.0,0.0,58.62,0.586,0.333,29
+ensemble,nonDisabled,40.82,1.57,0.0,0.0,53.85,0.56,0.356,26
+ensemble,unknown,18.37,0.41,53.33,46.67,26.67,0.273,0.111,45

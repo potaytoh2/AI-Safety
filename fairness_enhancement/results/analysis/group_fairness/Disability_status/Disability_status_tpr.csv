@@ -1,0 +1,4 @@
+Group,ensemble,few_shot,post_processing,prompt_optimization
+disabled,0.586,0.586,0.586,0.448
+nonDisabled,0.56,0.538,0.56,0.577
+unknown,0.273,0.067,0.273,0.179
