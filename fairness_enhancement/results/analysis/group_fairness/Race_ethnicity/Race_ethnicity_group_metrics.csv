@@ -1,73 +1,73 @@
-Method,Group,Unknown for Ambiguous (%),Bias for Ambiguous (%),Accuracy (%),TPR,FPR,Examples
-prompt_optimization,Asian,0.0,0.0,0.0,0.0,0.0,1
-prompt_optimization,European,0.0,0.0,100.0,1.0,0.011,1
-prompt_optimization,F-Arab,0.0,0.0,60.0,0.6,0.022,5
-prompt_optimization,F-Asian,0.0,0.0,0.0,0.0,0.011,1
-prompt_optimization,F-Black,0.0,0.0,16.67,0.2,0.077,6
-prompt_optimization,F-Latino,0.0,0.0,75.0,0.75,0.033,4
-prompt_optimization,F-White,0.0,0.0,60.0,0.6,0.022,5
-prompt_optimization,Hispanic,0.0,0.0,0.0,0.0,0.0,1
-prompt_optimization,Jewish,0.0,0.0,0.0,0.0,0.0,1
-prompt_optimization,Latino,0.0,0.0,0.0,0.0,0.0,2
-prompt_optimization,M-Arab,0.0,0.0,0.0,0.0,0.022,3
-prompt_optimization,M-Asian,0.0,0.0,60.0,0.6,0.0,5
-prompt_optimization,M-Black,0.0,0.0,33.33,0.333,0.067,6
-prompt_optimization,M-Latino,0.0,0.0,57.14,0.571,0.045,7
-prompt_optimization,M-White,0.0,0.0,33.33,0.333,0.032,3
-prompt_optimization,Native American,0.0,0.0,0.0,0.0,0.011,1
-prompt_optimization,South American,0.0,0.0,100.0,1.0,0.021,2
-prompt_optimization,unknown,82.61,17.39,50.0,0.535,0.245,46
-few_shot,Asian,0.0,0.0,0.0,0.0,0.0,1
-few_shot,European,0.0,0.0,100.0,1.0,0.01,1
-few_shot,F-Arab,0.0,0.0,80.0,0.8,0.021,5
-few_shot,F-Asian,0.0,0.0,0.0,0.0,0.0,1
-few_shot,F-Black,0.0,0.0,66.67,0.667,0.074,6
-few_shot,F-Latino,0.0,0.0,50.0,0.5,0.031,4
-few_shot,F-White,0.0,0.0,40.0,0.4,0.011,5
-few_shot,Hispanic,0.0,0.0,0.0,0.0,0.0,1
-few_shot,Jewish,0.0,0.0,0.0,0.0,0.02,1
-few_shot,Latino,0.0,0.0,50.0,0.5,0.0,2
-few_shot,M-Arab,0.0,0.0,100.0,1.0,0.052,3
-few_shot,M-Asian,0.0,0.0,40.0,0.4,0.0,5
-few_shot,M-Black,0.0,0.0,33.33,0.333,0.053,6
-few_shot,M-Latino,0.0,0.0,28.57,0.286,0.043,7
-few_shot,M-White,0.0,0.0,100.0,1.0,0.052,3
-few_shot,Native American,0.0,0.0,100.0,1.0,0.0,1
-few_shot,South American,0.0,0.0,50.0,0.5,0.01,2
-few_shot,unknown,67.39,32.61,34.78,0.348,0.204,46
-post_processing,Asian,0.0,0.0,0.0,0.0,0.0,1
-post_processing,European,0.0,0.0,100.0,1.0,0.0,1
-post_processing,F-Arab,0.0,0.0,80.0,0.8,0.011,5
-post_processing,F-Asian,0.0,0.0,0.0,0.0,0.02,1
-post_processing,F-Black,0.0,0.0,66.67,0.667,0.085,6
-post_processing,F-Latino,0.0,0.0,75.0,0.75,0.042,4
-post_processing,F-White,0.0,0.0,100.0,1.0,0.021,5
-post_processing,Hispanic,0.0,0.0,0.0,0.0,0.0,1
-post_processing,Jewish,0.0,0.0,0.0,0.0,0.01,1
-post_processing,Latino,0.0,0.0,0.0,0.0,0.0,2
-post_processing,M-Arab,0.0,0.0,66.67,0.667,0.072,3
-post_processing,M-Asian,0.0,0.0,0.0,0.0,0.011,5
-post_processing,M-Black,0.0,0.0,50.0,0.5,0.064,6
-post_processing,M-Latino,0.0,0.0,57.14,0.571,0.065,7
-post_processing,M-White,0.0,0.0,100.0,1.0,0.041,3
-post_processing,Native American,0.0,0.0,100.0,1.0,0.01,1
-post_processing,South American,0.0,0.0,50.0,0.5,0.01,2
-post_processing,unknown,41.3,58.7,23.91,0.239,0.037,46
-ensemble,Asian,0.0,0.0,100.0,1.0,0.0,1
-ensemble,European,0.0,0.0,100.0,1.0,0.0,1
-ensemble,F-Arab,0.0,0.0,80.0,0.8,0.011,5
-ensemble,F-Asian,0.0,0.0,0.0,0.0,0.01,1
-ensemble,F-Black,0.0,0.0,83.33,0.833,0.085,6
-ensemble,F-Latino,0.0,0.0,75.0,0.75,0.042,4
-ensemble,F-White,0.0,0.0,80.0,0.8,0.021,5
-ensemble,Hispanic,0.0,0.0,0.0,0.0,0.0,1
-ensemble,Jewish,0.0,0.0,0.0,0.0,0.01,1
-ensemble,Latino,0.0,0.0,0.0,0.0,0.0,2
-ensemble,M-Arab,0.0,0.0,66.67,0.667,0.082,3
-ensemble,M-Asian,0.0,0.0,20.0,0.2,0.0,5
-ensemble,M-Black,0.0,0.0,50.0,0.5,0.043,6
-ensemble,M-Latino,0.0,0.0,71.43,0.714,0.065,7
-ensemble,M-White,0.0,0.0,66.67,0.667,0.052,3
-ensemble,Native American,0.0,0.0,100.0,1.0,0.01,1
-ensemble,South American,0.0,0.0,50.0,0.5,0.01,2
-ensemble,unknown,43.48,56.52,28.26,0.283,0.037,46
+Method,Group,Demographic Parity (%),Demographic Parity Ratio,Unknown for Ambiguous (%),Bias for Ambiguous (%),Accuracy (%),TPR,FPR,Examples
+prompt_optimization,Asian,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+prompt_optimization,European,2.08,2.08,0.0,0.0,100.0,1.0,0.011,1
+prompt_optimization,F-Arab,5.21,1.04,0.0,0.0,60.0,0.6,0.022,5
+prompt_optimization,F-Asian,1.04,1.04,0.0,0.0,0.0,0.0,0.011,1
+prompt_optimization,F-Black,8.33,1.39,0.0,0.0,16.67,0.2,0.077,6
+prompt_optimization,F-Latino,6.25,1.56,0.0,0.0,75.0,0.75,0.033,4
+prompt_optimization,F-White,5.21,1.04,0.0,0.0,60.0,0.6,0.022,5
+prompt_optimization,Hispanic,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+prompt_optimization,Jewish,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+prompt_optimization,Latino,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2
+prompt_optimization,M-Arab,2.08,0.69,0.0,0.0,0.0,0.0,0.022,3
+prompt_optimization,M-Asian,3.12,0.62,0.0,0.0,60.0,0.6,0.0,5
+prompt_optimization,M-Black,8.33,1.39,0.0,0.0,33.33,0.333,0.067,6
+prompt_optimization,M-Latino,8.33,1.19,0.0,0.0,57.14,0.571,0.045,7
+prompt_optimization,M-White,4.17,1.39,0.0,0.0,33.33,0.333,0.032,3
+prompt_optimization,Native American,1.04,1.04,0.0,0.0,0.0,0.0,0.011,1
+prompt_optimization,South American,4.17,2.08,0.0,0.0,100.0,1.0,0.021,2
+prompt_optimization,unknown,37.5,0.82,82.61,17.39,50.0,0.535,0.245,46
+few_shot,Asian,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+few_shot,European,2.0,2.0,0.0,0.0,100.0,1.0,0.01,1
+few_shot,F-Arab,6.0,1.2,0.0,0.0,80.0,0.8,0.021,5
+few_shot,F-Asian,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+few_shot,F-Black,11.0,1.83,0.0,0.0,66.67,0.667,0.074,6
+few_shot,F-Latino,5.0,1.25,0.0,0.0,50.0,0.5,0.031,4
+few_shot,F-White,3.0,0.6,0.0,0.0,40.0,0.4,0.011,5
+few_shot,Hispanic,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+few_shot,Jewish,2.0,2.0,0.0,0.0,0.0,0.0,0.02,1
+few_shot,Latino,1.0,0.5,0.0,0.0,50.0,0.5,0.0,2
+few_shot,M-Arab,8.0,2.67,0.0,0.0,100.0,1.0,0.052,3
+few_shot,M-Asian,2.0,0.4,0.0,0.0,40.0,0.4,0.0,5
+few_shot,M-Black,7.0,1.17,0.0,0.0,33.33,0.333,0.053,6
+few_shot,M-Latino,6.0,0.86,0.0,0.0,28.57,0.286,0.043,7
+few_shot,M-White,8.0,2.67,0.0,0.0,100.0,1.0,0.052,3
+few_shot,Native American,1.0,1.0,0.0,0.0,100.0,1.0,0.0,1
+few_shot,South American,2.0,1.0,0.0,0.0,50.0,0.5,0.01,2
+few_shot,unknown,27.0,0.59,67.39,32.61,34.78,0.348,0.204,46
+post_processing,Asian,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+post_processing,European,1.0,1.0,0.0,0.0,100.0,1.0,0.0,1
+post_processing,F-Arab,5.0,1.0,0.0,0.0,80.0,0.8,0.011,5
+post_processing,F-Asian,2.0,2.0,0.0,0.0,0.0,0.0,0.02,1
+post_processing,F-Black,12.0,2.0,0.0,0.0,66.67,0.667,0.085,6
+post_processing,F-Latino,7.0,1.75,0.0,0.0,75.0,0.75,0.042,4
+post_processing,F-White,7.0,1.4,0.0,0.0,100.0,1.0,0.021,5
+post_processing,Hispanic,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+post_processing,Jewish,1.0,1.0,0.0,0.0,0.0,0.0,0.01,1
+post_processing,Latino,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2
+post_processing,M-Arab,9.0,3.0,0.0,0.0,66.67,0.667,0.072,3
+post_processing,M-Asian,1.0,0.2,0.0,0.0,0.0,0.0,0.011,5
+post_processing,M-Black,9.0,1.5,0.0,0.0,50.0,0.5,0.064,6
+post_processing,M-Latino,10.0,1.43,0.0,0.0,57.14,0.571,0.065,7
+post_processing,M-White,7.0,2.33,0.0,0.0,100.0,1.0,0.041,3
+post_processing,Native American,2.0,2.0,0.0,0.0,100.0,1.0,0.01,1
+post_processing,South American,2.0,1.0,0.0,0.0,50.0,0.5,0.01,2
+post_processing,unknown,13.0,0.28,41.3,58.7,23.91,0.239,0.037,46
+ensemble,Asian,1.0,1.0,0.0,0.0,100.0,1.0,0.0,1
+ensemble,European,1.0,1.0,0.0,0.0,100.0,1.0,0.0,1
+ensemble,F-Arab,5.0,1.0,0.0,0.0,80.0,0.8,0.011,5
+ensemble,F-Asian,1.0,1.0,0.0,0.0,0.0,0.0,0.01,1
+ensemble,F-Black,13.0,2.17,0.0,0.0,83.33,0.833,0.085,6
+ensemble,F-Latino,7.0,1.75,0.0,0.0,75.0,0.75,0.042,4
+ensemble,F-White,6.0,1.2,0.0,0.0,80.0,0.8,0.021,5
+ensemble,Hispanic,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+ensemble,Jewish,1.0,1.0,0.0,0.0,0.0,0.0,0.01,1
+ensemble,Latino,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2
+ensemble,M-Arab,10.0,3.33,0.0,0.0,66.67,0.667,0.082,3
+ensemble,M-Asian,1.0,0.2,0.0,0.0,20.0,0.2,0.0,5
+ensemble,M-Black,7.0,1.17,0.0,0.0,50.0,0.5,0.043,6
+ensemble,M-Latino,11.0,1.57,0.0,0.0,71.43,0.714,0.065,7
+ensemble,M-White,7.0,2.33,0.0,0.0,66.67,0.667,0.052,3
+ensemble,Native American,2.0,2.0,0.0,0.0,100.0,1.0,0.01,1
+ensemble,South American,2.0,1.0,0.0,0.0,50.0,0.5,0.01,2
+ensemble,unknown,15.0,0.33,43.48,56.52,28.26,0.283,0.037,46

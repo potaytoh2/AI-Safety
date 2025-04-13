@@ -1,101 +1,101 @@
-Method,Group,Unknown for Ambiguous (%),Bias for Ambiguous (%),Accuracy (%),TPR,FPR,Examples
-prompt_optimization,highSES-African American,0.0,0.0,100.0,1.0,0.0,1
-prompt_optimization,highSES-Black,0.0,0.0,100.0,1.0,0.0,2
-prompt_optimization,highSES-F-Arab,0.0,0.0,50.0,0.5,0.0,2
-prompt_optimization,highSES-F-Black,0.0,0.0,25.0,0.333,0.0,4
-prompt_optimization,highSES-F-White,0.0,0.0,60.0,0.75,0.012,5
-prompt_optimization,highSES-Hispanic,0.0,0.0,0.0,0.0,0.0,1
-prompt_optimization,highSES-M-Asian,0.0,0.0,50.0,0.5,0.0,2
-prompt_optimization,highSES-M-Black,0.0,0.0,0.0,0.0,0.0,1
-prompt_optimization,highSES-M-Latino,0.0,0.0,100.0,1.0,0.0,2
-prompt_optimization,highSES-White,0.0,0.0,0.0,0.0,0.0,1
-prompt_optimization,lowSES-African American,0.0,0.0,50.0,0.5,0.0,2
-prompt_optimization,lowSES-Asian,0.0,0.0,0.0,0.0,0.0,1
-prompt_optimization,lowSES-Black,0.0,0.0,0.0,0.0,0.0,1
-prompt_optimization,lowSES-F-Arab,0.0,0.0,0.0,0.0,0.0,2
-prompt_optimization,lowSES-F-Asian,0.0,0.0,100.0,1.0,0.0,1
-prompt_optimization,lowSES-F-Black,0.0,0.0,33.33,0.333,0.0,3
-prompt_optimization,lowSES-F-White,0.0,0.0,33.33,1.0,0.012,3
-prompt_optimization,lowSES-Hispanic,0.0,0.0,50.0,0.5,0.0,2
-prompt_optimization,lowSES-Latino,0.0,0.0,0.0,0.0,0.0,1
-prompt_optimization,lowSES-M-Asian,0.0,0.0,50.0,1.0,0.0,2
-prompt_optimization,lowSES-M-Black,0.0,0.0,0.0,0.0,0.0,3
-prompt_optimization,lowSES-M-Latino,0.0,0.0,60.0,0.6,0.025,5
-prompt_optimization,lowSES-Native American,0.0,0.0,100.0,1.0,0.0,1
-prompt_optimization,lowSES-White,0.0,0.0,50.0,1.0,0.0,2
-prompt_optimization,unknown,72.0,28.0,74.0,0.881,0.395,50
-few_shot,highSES-African American,0.0,0.0,100.0,1.0,0.016,1
-few_shot,highSES-Black,0.0,0.0,100.0,1.0,0.016,2
-few_shot,highSES-F-Arab,0.0,0.0,50.0,1.0,0.0,2
-few_shot,highSES-F-Black,0.0,0.0,0.0,0.0,0.0,4
-few_shot,highSES-F-White,0.0,0.0,60.0,0.6,0.0,5
-few_shot,highSES-Hispanic,0.0,0.0,0.0,0.0,0.0,1
-few_shot,highSES-M-Asian,0.0,0.0,0.0,0.0,0.0,2
-few_shot,highSES-M-Black,0.0,0.0,100.0,1.0,0.0,1
-few_shot,highSES-M-Latino,0.0,0.0,0.0,0.0,0.0,2
-few_shot,highSES-White,0.0,0.0,100.0,1.0,0.0,1
-few_shot,lowSES-African American,0.0,0.0,50.0,0.5,0.0,2
-few_shot,lowSES-Asian,0.0,0.0,100.0,1.0,0.0,1
-few_shot,lowSES-Black,0.0,0.0,100.0,1.0,0.063,1
-few_shot,lowSES-F-Arab,0.0,0.0,0.0,0.0,0.0,2
-few_shot,lowSES-F-Asian,0.0,0.0,0.0,0.0,0.0,1
-few_shot,lowSES-F-Black,0.0,0.0,0.0,0.0,0.0,3
-few_shot,lowSES-F-White,0.0,0.0,0.0,0.0,0.032,3
-few_shot,lowSES-Hispanic,0.0,0.0,50.0,0.5,0.016,2
-few_shot,lowSES-Latino,0.0,0.0,100.0,1.0,0.032,1
-few_shot,lowSES-M-Asian,0.0,0.0,0.0,0.0,0.0,2
-few_shot,lowSES-M-Black,0.0,0.0,0.0,0.0,0.0,3
-few_shot,lowSES-M-Latino,0.0,0.0,40.0,0.667,0.049,5
-few_shot,lowSES-Native American,0.0,0.0,0.0,0.0,0.0,1
-few_shot,lowSES-White,0.0,0.0,50.0,0.5,0.016,2
-few_shot,unknown,52.0,48.0,42.0,0.618,0.2,50
-post_processing,highSES-African American,0.0,0.0,0.0,0.0,0.01,1
-post_processing,highSES-Black,0.0,0.0,100.0,1.0,0.01,2
-post_processing,highSES-F-Arab,0.0,0.0,100.0,1.0,0.0,2
-post_processing,highSES-F-Black,0.0,0.0,100.0,1.0,0.0,4
-post_processing,highSES-F-White,0.0,0.0,80.0,0.8,0.032,5
-post_processing,highSES-Hispanic,0.0,0.0,0.0,0.0,0.01,1
-post_processing,highSES-M-Asian,0.0,0.0,100.0,1.0,0.042,2
-post_processing,highSES-M-Black,0.0,0.0,100.0,1.0,0.0,1
-post_processing,highSES-M-Latino,0.0,0.0,100.0,1.0,0.01,2
-post_processing,highSES-White,0.0,0.0,100.0,1.0,0.01,1
-post_processing,lowSES-African American,0.0,0.0,50.0,0.5,0.0,2
-post_processing,lowSES-Asian,0.0,0.0,100.0,1.0,0.0,1
-post_processing,lowSES-Black,0.0,0.0,100.0,1.0,0.021,1
-post_processing,lowSES-F-Arab,0.0,0.0,100.0,1.0,0.0,2
-post_processing,lowSES-F-Asian,0.0,0.0,0.0,0.0,0.01,1
-post_processing,lowSES-F-Black,0.0,0.0,100.0,1.0,0.011,3
-post_processing,lowSES-F-White,0.0,0.0,66.67,0.667,0.021,3
-post_processing,lowSES-Hispanic,0.0,0.0,100.0,1.0,0.021,2
-post_processing,lowSES-Latino,0.0,0.0,0.0,0.0,0.041,1
-post_processing,lowSES-M-Asian,0.0,0.0,50.0,1.0,0.01,2
-post_processing,lowSES-M-Black,0.0,0.0,66.67,0.667,0.0,3
-post_processing,lowSES-M-Latino,0.0,0.0,80.0,0.8,0.032,5
-post_processing,lowSES-Native American,0.0,0.0,100.0,1.0,0.0,1
-post_processing,lowSES-White,0.0,0.0,100.0,1.0,0.01,2
-post_processing,unknown,38.0,62.0,32.0,0.327,0.082,50
-ensemble,highSES-African American,0.0,0.0,0.0,0.0,0.01,1
-ensemble,highSES-Black,0.0,0.0,100.0,1.0,0.01,2
-ensemble,highSES-F-Arab,0.0,0.0,50.0,0.5,0.0,2
-ensemble,highSES-F-Black,0.0,0.0,75.0,0.75,0.011,4
-ensemble,highSES-F-White,0.0,0.0,80.0,0.8,0.032,5
-ensemble,highSES-Hispanic,0.0,0.0,0.0,0.0,0.01,1
-ensemble,highSES-M-Asian,0.0,0.0,100.0,1.0,0.042,2
-ensemble,highSES-M-Black,0.0,0.0,100.0,1.0,0.0,1
-ensemble,highSES-M-Latino,0.0,0.0,100.0,1.0,0.01,2
-ensemble,highSES-White,0.0,0.0,100.0,1.0,0.0,1
-ensemble,lowSES-African American,0.0,0.0,50.0,0.5,0.0,2
-ensemble,lowSES-Asian,0.0,0.0,100.0,1.0,0.0,1
-ensemble,lowSES-Black,0.0,0.0,0.0,0.0,0.021,1
-ensemble,lowSES-F-Arab,0.0,0.0,100.0,1.0,0.0,2
-ensemble,lowSES-F-Asian,0.0,0.0,0.0,0.0,0.01,1
-ensemble,lowSES-F-Black,0.0,0.0,100.0,1.0,0.0,3
-ensemble,lowSES-F-White,0.0,0.0,100.0,1.0,0.021,3
-ensemble,lowSES-Hispanic,0.0,0.0,100.0,1.0,0.021,2
-ensemble,lowSES-Latino,0.0,0.0,0.0,0.0,0.041,1
-ensemble,lowSES-M-Asian,0.0,0.0,50.0,1.0,0.01,2
-ensemble,lowSES-M-Black,0.0,0.0,66.67,0.667,0.0,3
-ensemble,lowSES-M-Latino,0.0,0.0,80.0,0.8,0.022,5
-ensemble,lowSES-Native American,0.0,0.0,100.0,1.0,0.0,1
-ensemble,lowSES-White,0.0,0.0,100.0,1.0,0.01,2
-ensemble,unknown,42.0,58.0,38.0,0.388,0.102,50
+Method,Group,Demographic Parity (%),Demographic Parity Ratio,Unknown for Ambiguous (%),Bias for Ambiguous (%),Accuracy (%),TPR,FPR,Examples
+prompt_optimization,highSES-African American,1.18,1.18,0.0,0.0,100.0,1.0,0.0,1
+prompt_optimization,highSES-Black,2.35,1.18,0.0,0.0,100.0,1.0,0.0,2
+prompt_optimization,highSES-F-Arab,1.18,0.59,0.0,0.0,50.0,0.5,0.0,2
+prompt_optimization,highSES-F-Black,1.18,0.29,0.0,0.0,25.0,0.333,0.0,4
+prompt_optimization,highSES-F-White,4.71,0.94,0.0,0.0,60.0,0.75,0.012,5
+prompt_optimization,highSES-Hispanic,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+prompt_optimization,highSES-M-Asian,1.18,0.59,0.0,0.0,50.0,0.5,0.0,2
+prompt_optimization,highSES-M-Black,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+prompt_optimization,highSES-M-Latino,2.35,1.18,0.0,0.0,100.0,1.0,0.0,2
+prompt_optimization,highSES-White,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+prompt_optimization,lowSES-African American,1.18,0.59,0.0,0.0,50.0,0.5,0.0,2
+prompt_optimization,lowSES-Asian,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+prompt_optimization,lowSES-Black,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+prompt_optimization,lowSES-F-Arab,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2
+prompt_optimization,lowSES-F-Asian,1.18,1.18,0.0,0.0,100.0,1.0,0.0,1
+prompt_optimization,lowSES-F-Black,1.18,0.39,0.0,0.0,33.33,0.333,0.0,3
+prompt_optimization,lowSES-F-White,2.35,0.78,0.0,0.0,33.33,1.0,0.012,3
+prompt_optimization,lowSES-Hispanic,1.18,0.59,0.0,0.0,50.0,0.5,0.0,2
+prompt_optimization,lowSES-Latino,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+prompt_optimization,lowSES-M-Asian,1.18,0.59,0.0,0.0,50.0,1.0,0.0,2
+prompt_optimization,lowSES-M-Black,0.0,0.0,0.0,0.0,0.0,0.0,0.0,3
+prompt_optimization,lowSES-M-Latino,5.88,1.18,0.0,0.0,60.0,0.6,0.025,5
+prompt_optimization,lowSES-Native American,1.18,1.18,0.0,0.0,100.0,1.0,0.0,1
+prompt_optimization,lowSES-White,1.18,0.59,0.0,0.0,50.0,1.0,0.0,2
+prompt_optimization,unknown,63.53,1.27,72.0,28.0,74.0,0.881,0.395,50
+few_shot,highSES-African American,3.12,3.12,0.0,0.0,100.0,1.0,0.016,1
+few_shot,highSES-Black,4.69,2.34,0.0,0.0,100.0,1.0,0.016,2
+few_shot,highSES-F-Arab,1.56,0.78,0.0,0.0,50.0,1.0,0.0,2
+few_shot,highSES-F-Black,0.0,0.0,0.0,0.0,0.0,0.0,0.0,4
+few_shot,highSES-F-White,4.69,0.94,0.0,0.0,60.0,0.6,0.0,5
+few_shot,highSES-Hispanic,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+few_shot,highSES-M-Asian,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2
+few_shot,highSES-M-Black,1.56,1.56,0.0,0.0,100.0,1.0,0.0,1
+few_shot,highSES-M-Latino,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2
+few_shot,highSES-White,1.56,1.56,0.0,0.0,100.0,1.0,0.0,1
+few_shot,lowSES-African American,1.56,0.78,0.0,0.0,50.0,0.5,0.0,2
+few_shot,lowSES-Asian,1.56,1.56,0.0,0.0,100.0,1.0,0.0,1
+few_shot,lowSES-Black,7.81,7.81,0.0,0.0,100.0,1.0,0.063,1
+few_shot,lowSES-F-Arab,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2
+few_shot,lowSES-F-Asian,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+few_shot,lowSES-F-Black,0.0,0.0,0.0,0.0,0.0,0.0,0.0,3
+few_shot,lowSES-F-White,3.12,1.04,0.0,0.0,0.0,0.0,0.032,3
+few_shot,lowSES-Hispanic,3.12,1.56,0.0,0.0,50.0,0.5,0.016,2
+few_shot,lowSES-Latino,4.69,4.69,0.0,0.0,100.0,1.0,0.032,1
+few_shot,lowSES-M-Asian,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2
+few_shot,lowSES-M-Black,0.0,0.0,0.0,0.0,0.0,0.0,0.0,3
+few_shot,lowSES-M-Latino,7.81,1.56,0.0,0.0,40.0,0.667,0.049,5
+few_shot,lowSES-Native American,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1
+few_shot,lowSES-White,3.12,1.56,0.0,0.0,50.0,0.5,0.016,2
+few_shot,unknown,42.19,0.84,52.0,48.0,42.0,0.618,0.2,50
+post_processing,highSES-African American,1.02,1.02,0.0,0.0,0.0,0.0,0.01,1
+post_processing,highSES-Black,3.06,1.53,0.0,0.0,100.0,1.0,0.01,2
+post_processing,highSES-F-Arab,2.04,1.02,0.0,0.0,100.0,1.0,0.0,2
+post_processing,highSES-F-Black,4.08,1.02,0.0,0.0,100.0,1.0,0.0,4
+post_processing,highSES-F-White,7.14,1.43,0.0,0.0,80.0,0.8,0.032,5
+post_processing,highSES-Hispanic,1.02,1.02,0.0,0.0,0.0,0.0,0.01,1
+post_processing,highSES-M-Asian,6.12,3.06,0.0,0.0,100.0,1.0,0.042,2
+post_processing,highSES-M-Black,1.02,1.02,0.0,0.0,100.0,1.0,0.0,1
+post_processing,highSES-M-Latino,3.06,1.53,0.0,0.0,100.0,1.0,0.01,2
+post_processing,highSES-White,2.04,2.04,0.0,0.0,100.0,1.0,0.01,1
+post_processing,lowSES-African American,1.02,0.51,0.0,0.0,50.0,0.5,0.0,2
+post_processing,lowSES-Asian,1.02,1.02,0.0,0.0,100.0,1.0,0.0,1
+post_processing,lowSES-Black,3.06,3.06,0.0,0.0,100.0,1.0,0.021,1
+post_processing,lowSES-F-Arab,2.04,1.02,0.0,0.0,100.0,1.0,0.0,2
+post_processing,lowSES-F-Asian,1.02,1.02,0.0,0.0,0.0,0.0,0.01,1
+post_processing,lowSES-F-Black,4.08,1.36,0.0,0.0,100.0,1.0,0.011,3
+post_processing,lowSES-F-White,4.08,1.36,0.0,0.0,66.67,0.667,0.021,3
+post_processing,lowSES-Hispanic,4.08,2.04,0.0,0.0,100.0,1.0,0.021,2
+post_processing,lowSES-Latino,4.08,4.08,0.0,0.0,0.0,0.0,0.041,1
+post_processing,lowSES-M-Asian,2.04,1.02,0.0,0.0,50.0,1.0,0.01,2
+post_processing,lowSES-M-Black,2.04,0.68,0.0,0.0,66.67,0.667,0.0,3
+post_processing,lowSES-M-Latino,7.14,1.43,0.0,0.0,80.0,0.8,0.032,5
+post_processing,lowSES-Native American,1.02,1.02,0.0,0.0,100.0,1.0,0.0,1
+post_processing,lowSES-White,3.06,1.53,0.0,0.0,100.0,1.0,0.01,2
+post_processing,unknown,20.41,0.41,38.0,62.0,32.0,0.327,0.082,50
+ensemble,highSES-African American,1.02,1.02,0.0,0.0,0.0,0.0,0.01,1
+ensemble,highSES-Black,3.06,1.53,0.0,0.0,100.0,1.0,0.01,2
+ensemble,highSES-F-Arab,1.02,0.51,0.0,0.0,50.0,0.5,0.0,2
+ensemble,highSES-F-Black,4.08,1.02,0.0,0.0,75.0,0.75,0.011,4
+ensemble,highSES-F-White,7.14,1.43,0.0,0.0,80.0,0.8,0.032,5
+ensemble,highSES-Hispanic,1.02,1.02,0.0,0.0,0.0,0.0,0.01,1
+ensemble,highSES-M-Asian,6.12,3.06,0.0,0.0,100.0,1.0,0.042,2
+ensemble,highSES-M-Black,1.02,1.02,0.0,0.0,100.0,1.0,0.0,1
+ensemble,highSES-M-Latino,3.06,1.53,0.0,0.0,100.0,1.0,0.01,2
+ensemble,highSES-White,1.02,1.02,0.0,0.0,100.0,1.0,0.0,1
+ensemble,lowSES-African American,1.02,0.51,0.0,0.0,50.0,0.5,0.0,2
+ensemble,lowSES-Asian,1.02,1.02,0.0,0.0,100.0,1.0,0.0,1
+ensemble,lowSES-Black,2.04,2.04,0.0,0.0,0.0,0.0,0.021,1
+ensemble,lowSES-F-Arab,2.04,1.02,0.0,0.0,100.0,1.0,0.0,2
+ensemble,lowSES-F-Asian,1.02,1.02,0.0,0.0,0.0,0.0,0.01,1
+ensemble,lowSES-F-Black,3.06,1.02,0.0,0.0,100.0,1.0,0.0,3
+ensemble,lowSES-F-White,5.1,1.7,0.0,0.0,100.0,1.0,0.021,3
+ensemble,lowSES-Hispanic,4.08,2.04,0.0,0.0,100.0,1.0,0.021,2
+ensemble,lowSES-Latino,4.08,4.08,0.0,0.0,0.0,0.0,0.041,1
+ensemble,lowSES-M-Asian,2.04,1.02,0.0,0.0,50.0,1.0,0.01,2
+ensemble,lowSES-M-Black,2.04,0.68,0.0,0.0,66.67,0.667,0.0,3
+ensemble,lowSES-M-Latino,6.12,1.22,0.0,0.0,80.0,0.8,0.022,5
+ensemble,lowSES-Native American,1.02,1.02,0.0,0.0,100.0,1.0,0.0,1
+ensemble,lowSES-White,3.06,1.53,0.0,0.0,100.0,1.0,0.01,2
+ensemble,unknown,24.49,0.49,42.0,58.0,38.0,0.388,0.102,50

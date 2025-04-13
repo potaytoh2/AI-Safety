@@ -1,0 +1,4 @@
+Group,ensemble,few_shot,post_processing,prompt_optimization
+disabled,1.41,1.62,1.41,1.32
+nonDisabled,1.57,1.81,1.57,1.84
+unknown,0.41,0.13,0.41,0.31

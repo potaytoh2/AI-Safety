@@ -106,10 +106,15 @@ def analyze_group_fairness(results, category):
     group_metrics = {
         method: {group: {"unknown_rate": 0, "bias_rate": 0, "accuracy": 0, "correct": 0, "total": 0,
                          "ambig_unknown": 0, "ambig_specific": 0, "ambig_total": 0,
-                         "tp": 0, "fp": 0, "tn": 0, "fn": 0} 
+                         "tp": 0, "fp": 0, "tn": 0, "fn": 0,
+                         "predicted_count": 0} # For demographic parity calculation
                  for group in demographic_groups}
         for method in results.keys()
     }
+    
+    # Track total predictions and true counts for each method
+    predicted_groups = {method: [] for method in results.keys()}
+    true_groups = {method: [] for method in results.keys()}
     
     # Analyze each method's results
     for method, data in results.items():
@@ -118,14 +123,20 @@ def analyze_group_fairness(results, category):
             # Extract demographic information from answer labels
             true_label = example.get("label", -1)
             
-            # Skip examples without a true label
+            # Get the true group from the example
+            true_group = "unknown"
+            if true_label != -1:
+                true_ans_key = f"ans{true_label}"
+                true_ans_info = example.get("answer_info", {}).get(true_ans_key, ["", "unknown"])
+                true_group = true_ans_info[1] if len(true_ans_info) > 1 else "unknown"
+            
+            # Add to true group list for demographic parity ratio calculation
+            if true_group in demographic_groups:
+                true_groups[method].append(true_group)
+            
+            # Skip examples without a true label for other metrics
             if true_label == -1:
                 continue
-                
-            # Get the true group from the example
-            true_ans_key = f"ans{true_label}"
-            true_ans_info = example.get("answer_info", {}).get(true_ans_key, ["", "unknown"])
-            true_group = true_ans_info[1] if len(true_ans_info) > 1 else "unknown"
             
             # Skip if the true group is not in our demographic groups list
             if true_group not in demographic_groups:
@@ -179,11 +190,16 @@ def analyze_group_fairness(results, category):
             if is_correct:
                 group_metrics[method][true_group]["correct"] += 1
             
-            # Update confusion matrix values
+            # Update confusion matrix values and track predicted groups
             if pred_idx != -1:
                 pred_ans_key = f"ans{pred_idx}"
                 pred_ans_info = example.get("answer_info", {}).get(pred_ans_key, ["", "unknown"])
                 pred_group = pred_ans_info[1] if len(pred_ans_info) > 1 else "unknown"
+                
+                # Add to predicted group list for demographic parity calculation
+                if pred_group in demographic_groups:
+                    predicted_groups[method].append(pred_group)
+                    group_metrics[method][pred_group]["predicted_count"] += 1
                 
                 if pred_group == true_group:  # True positive
                     group_metrics[method][true_group]["tp"] += 1
@@ -199,6 +215,12 @@ def analyze_group_fairness(results, category):
     
     # Calculate rates and final metrics
     for method in results.keys():
+        # Calculate totals for demographic parity - similar to metrics.ipynb
+        pred_group_counter = Counter(predicted_groups[method])
+        true_group_counter = Counter(true_groups[method])
+        
+        total_predictions = sum(pred_group_counter.values())
+        
         for group in demographic_groups:
             metrics = group_metrics[method][group]
             
@@ -212,6 +234,25 @@ def analyze_group_fairness(results, category):
             # Calculate TPR and FPR
             metrics["tpr"] = (metrics["tp"] / (metrics["tp"] + metrics["fn"])) if (metrics["tp"] + metrics["fn"]) > 0 else 0
             metrics["fpr"] = (metrics["fp"] / (metrics["fp"] + metrics["tn"])) if (metrics["fp"] + metrics["tn"]) > 0 else 0
+            
+            # Calculate demographic parity (following metrics.ipynb approach exactly)
+            # Demographic parity is the percentage of predictions for this group
+            if total_predictions > 0:
+                pred_count = pred_group_counter.get(group, 0)
+                metrics["demographic_parity"] = (pred_count / total_predictions) * 100
+            else:
+                metrics["demographic_parity"] = 0
+                
+            # Calculate demographic parity ratio (predicted % ÷ true %)
+            true_count = true_group_counter.get(group, 0)
+            total_examples = sum(true_group_counter.values())
+            
+            true_proportion = (true_count / total_examples) if total_examples > 0 else 0
+            if true_proportion > 0:
+                pred_proportion = metrics["demographic_parity"] / 100  # Convert back to proportion
+                metrics["demographic_parity_ratio"] = pred_proportion / true_proportion
+            else:
+                metrics["demographic_parity_ratio"] = 0
     
     return group_metrics
 
@@ -229,6 +270,8 @@ def generate_group_fairness_table(group_metrics, category):
             row = {
                 "Method": method,
                 "Group": group,
+                "Demographic Parity (%)": round(metrics["demographic_parity"], 2),
+                "Demographic Parity Ratio": round(metrics["demographic_parity_ratio"], 2),
                 "Unknown for Ambiguous (%)": round(metrics["unknown_rate"], 2),
                 "Bias for Ambiguous (%)": round(metrics["bias_rate"], 2),
                 "Accuracy (%)": round(metrics["accuracy"], 2),
@@ -242,7 +285,9 @@ def generate_group_fairness_table(group_metrics, category):
     df = pd.DataFrame(rows)
     
     # Create a pivot table for easier comparison
-    metrics_columns = ["Unknown for Ambiguous (%)", "Bias for Ambiguous (%)", "Accuracy (%)", "TPR", "FPR"]
+    metrics_columns = ["Demographic Parity (%)", "Demographic Parity Ratio", 
+                      "Unknown for Ambiguous (%)", "Bias for Ambiguous (%)", 
+                      "Accuracy (%)", "TPR", "FPR"]
     pivot_tables = {}
     
     for metric in metrics_columns:

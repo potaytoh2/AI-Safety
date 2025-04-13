@@ -1,0 +1,18 @@
+Group,ensemble,few_shot,post_processing,prompt_optimization
+F-African American,4.04,3.09,4.04,3.19
+F-Arab,1.15,0.59,0.87,0.61
+F-Asian,9.09,6.19,9.09,4.26
+F-Black,2.53,2.58,2.69,1.77
+F-Hispanic,1.01,2.06,1.01,1.06
+F-Latino,8.08,4.12,11.11,3.19
+F-Middle Eastern,1.01,1.03,1.01,0.0
+F-Roma,1.01,1.03,1.01,0.0
+F-White,1.52,2.06,1.52,1.06
+M-African,0.0,0.0,0.0,0.0
+M-Arab,1.01,0.77,1.52,1.06
+M-Asian,0.76,1.16,0.76,0.53
+M-Black,5.05,5.15,4.55,3.72
+M-Latino,1.01,0.41,1.01,1.06
+M-Roma,0.0,0.0,0.0,0.0
+M-White,1.52,1.03,1.52,0.53
+unknown,0.32,0.5,0.27,0.78
