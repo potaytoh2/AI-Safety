@@ -1,0 +1,3 @@
+num_examples,acc,asr,method,model,mask_rate,task
+9,77.77777777777779,22.22222222222222,SemAttack,pred-gemini-1.5-flash,0.05,sst2
+9,77.77777777777779,22.22222222222222,SemAttack,pred-gemini-1.5-flash-8b,0.05,sst2

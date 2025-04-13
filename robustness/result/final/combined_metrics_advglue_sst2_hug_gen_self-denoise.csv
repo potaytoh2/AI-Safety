@@ -1,0 +1,3 @@
+num_examples,acc,asr,model,mask_rate,task
+148,63.51351351351351,36.48648648648649,pred-gemini-1.5-flash,0.05,sst2
+148,54.054054054054056,45.945945945945944,pred-gemini-1.5-flash-8b,0.05,sst2

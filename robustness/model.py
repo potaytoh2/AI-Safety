@@ -21,7 +21,8 @@ class Model(object):
                  label_to_id,
                  model=None,
                  gpu=-1,
-                 mask_rate=0):
+                 mask_rate=0,
+                 self_denoise=False):
         
         self.task = task
         self.service = service
@@ -31,7 +32,7 @@ class Model(object):
         self.label_to_id = label_to_id
         self.gpu = gpu
         self.mask_rate = mask_rate
-
+        self.self_denoise = self_denoise
         if self.service == 'hug_gen' and "deepseek" in self.model:
             print("initializing")
             from transformers import pipeline, AutoTokenizer, AutoModelForCausalLM
@@ -85,7 +86,8 @@ class Model(object):
                 new_sentence = " ".join(tmp_sentence)
                 
                 #Implement construct predict mask method here
-                new_sentence = self.predict_mask(new_sentence)
+                if self.self_denoise:
+                    new_sentence = self.predict_mask(new_sentence)
 
                 # Get prediction from model selected
                 c = self.pred_by_generation(prompt, new_sentence, self.label_set[self.task])

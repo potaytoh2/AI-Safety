@@ -39,7 +39,11 @@ def merge_res(args):
     model_list = MODEL_SET[args.service] # e.g. list of gemini models
     for model in model_list: 
         if args.mask_rate>0:
-            res = pd.read_csv('result/' + dataset + '_' + args.task +
+            if args.self_denoise>0:
+                res = pd.read_csv('result/' + dataset + '_' + args.task +
+                          '_' + args.service + '_' + model.replace('/', '_') + '_'+ 'maskrate'+ '_' +str(args.mask_rate) + '_self-denoise' + '.csv')
+            else:
+                res = pd.read_csv('result/' + dataset + '_' + args.task +
                           '_' + args.service + '_' + model.replace('/', '_') + '_'+ 'maskrate'+ '_' +str(args.mask_rate) + '.csv')
         else:
             res = pd.read_csv('result/' + dataset + '_' + args.task +
@@ -190,7 +194,7 @@ def stat(args):
 def run(args):
     data = Dataset(args.dataset, DATA_PATH[args.dataset], args.task).dataclass
     print('made dataset')
-    infer = Model(args.task, args.service, LABEL_SET, MODEL_SET, LABEL_TO_ID, args.model, args.gpu, mask_rate=args.mask_rate)
+    infer = Model(args.task, args.service, LABEL_SET, MODEL_SET, LABEL_TO_ID, args.model, args.gpu, mask_rate=args.mask_rate, self_denoise = args.self_denoise)
     print("made model")
     data_len = len(data.get_data_by_task(args.task))
     os.makedirs("result", exist_ok=True)
